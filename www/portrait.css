@@ -2259,11 +2259,32 @@ html.gwent-portrait .card > div:nth-child(1) {
 	position: absolute;
 	top: 2%;
 	left: 2%;
-	width: max(20px, 36%);
-	height: max(20px, 26%);
+	width: 32%;
+	height: 22.5%;
 	margin: 0;
+	/* The badge PNGs keep the disc in the top-left quarter of a 215x215
+	   canvas; scale it so the disc fills the box instead of floating. */
+	background-position: 15% 15%;
+	background-size: 195% 195%;
+}
+
+html.gwent-portrait .hero > div:nth-child(1) {
+	top: 1%;
+	left: 1%;
+	width: 44%;
+	height: 31%;
 	background-position: center;
 	background-size: contain;
+}
+
+html.gwent-portrait .hero > div:nth-child(1) > div {
+	top: 16%;
+	left: 13%;
+	right: auto;
+	bottom: auto;
+	width: 40%;
+	height: 40%;
+	padding-top: 1%;
 }
 
 html.gwent-portrait .card > div:nth-child(1) > div {
@@ -2275,8 +2296,8 @@ html.gwent-portrait .card > div:nth-child(1) > div {
 	width: auto;
 	height: auto;
 	padding-top: 3%;
-	font-size: 10px;
-	font-size: clamp(10px, 15cqw, 26px);
+	font-size: 8px;
+	font-size: clamp(8px, 12cqw, 20px);
 	line-height: 1;
 	font-weight: 800;
 	color: #16110a;
@@ -2288,23 +2309,24 @@ html.gwent-portrait .hero > div:nth-child(1) > div {
 	text-shadow: 0 1px 2px #000;
 }
 
+/* Row and ability icons follow the printed card: a vertical stack on the left. */
 html.gwent-portrait .card > div:nth-child(2),
 html.gwent-portrait .card > div:nth-child(3) {
 	position: absolute;
-	top: auto;
-	bottom: 2%;
-	width: max(16px, 26%);
-	height: max(16px, 18%);
+	bottom: auto;
+	right: auto;
+	left: 3%;
+	width: 22%;
+	height: 15.5%;
 	margin: 0;
 }
 
 html.gwent-portrait .card > div:nth-child(2) {
-	left: auto;
-	right: 2%;
+	top: 38%;
 }
 
 html.gwent-portrait .card > div:nth-child(3) {
-	left: 2%;
+	top: 56%;
 }
 
 html.gwent-portrait .card > div:nth-child(4) {
@@ -2316,4 +2338,14 @@ html.gwent-portrait #weather .card > div:nth-child(1),
 html.gwent-portrait #weather .card > div:nth-child(2),
 html.gwent-portrait #weather .card > div:nth-child(3) {
 	display: none;
+}
+/* The hero badge keeps its number inside the round part of the winged shield.
+   This rule must stay last: it overrides the generic centred number box. */
+html.gwent-portrait .hero > div:nth-child(1) > div {
+	inset: auto;
+	top: 16%;
+	left: 13%;
+	width: 40%;
+	height: 40%;
+	padding-top: 1%;
 }
