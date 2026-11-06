@@ -2397,3 +2397,28 @@ html.gwent-portrait .drawn-card {
 	background-position: center;
 	border-radius: 6px;
 }
+/* The verdict banner art has the English word baked in; cover the plaque and
+   print the Russian verdict on top of it. */
+html.gwent-portrait #end-screen > :nth-child(1)::after {
+	content: "";
+	position: absolute;
+	left: 17%;
+	right: 17%;
+	top: 27%;
+	bottom: 31%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	background: rgba(12, 10, 8, 0.88);
+	color: #e0b15a;
+	font-family: Arial, "Noto Sans", sans-serif;
+	font-size: clamp(18px, 6vw, 30px);
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+html.gwent-portrait #end-screen > .end-win::after { content: "Победа"; }
+html.gwent-portrait #end-screen > .end-lose::after { content: "Поражение"; }
+html.gwent-portrait #end-screen > .end-draw::after { content: "Ничья"; }

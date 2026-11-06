@@ -53,3 +53,9 @@ test("the end screen banner does not tile", () => {
 	assert.ok(rule.includes("background-size: contain"));
 	assert.ok(rule.includes("aspect-ratio: 656 / 416"));
 });
+test("the end screen verdict is Russian", () => {
+	const css = readFileSync(join(wwwDir, "portrait.css"), "utf8");
+	for (const text of ["Победа", "Поражение", "Ничья"]) {
+		assert.ok(css.includes('content: "' + text + '"'), "missing verdict: " + text);
+	}
+});
