@@ -15,7 +15,7 @@
 | `www/rules.js` | чистые правила (чучело, шпионы, лидеры, проверка колоды) — без DOM |
 | `www/leader-picker.js` | выбор лидера фракции |
 | `android/` | проект Capacitor для сборки APK |
-| `tests/` | 35 тестов: правила, DOM-сценарии, импорт колод, безопасность |
+| `tests/` | 36 тестов: правила, DOM-сценарии, импорт колод, безопасность |
 | `docs/` | правила Ведьмак 3, разбор чучела, описание выбора лидера |
 | `SECURITY.md` | модель угроз и отчёт по проверке безопасности |
 
@@ -50,7 +50,7 @@
 
 ## Сборка
 
-Нужны Node.js 20+, JDK 17+ и Android SDK (`ANDROID_HOME`, platform 35, build-tools 35).
+Нужны Node.js 24+ (jsdom 31), JDK 17+ и Android SDK (`ANDROID_HOME`, platform 35, build-tools 35).
 
 ```bash
 npm ci

@@ -2657,9 +2657,12 @@ class DeckMaker {
 		return true;
 	}
 	
-	// Sets current leader and updates UI
+	// Sets current leader and updates UI. An unknown index keeps the current leader.
 	setLeader(index){
-		this.leader = this.leaders.filter( l => l.index == index)[0];
+		const next = this.leaders.filter( l => l.index == index)[0];
+		if (!next)
+			return;
+		this.leader = next;
 		this.leader_elem.children[1].style.backgroundImage = largeURL(this.leader.card.deck + "_" + this.leader.card.filename);
 	}
 	
@@ -2852,6 +2855,8 @@ class DeckMaker {
 	
 	// Verifies current deck, creates the players and their decks, then starts a new game
 	startNewGame(){
+		if (!this.leader)
+			return;
 		let warning = "";
 		if (this.stats.units < 22)
 			warning += "Your deck must have at least 22 unit cards. \n";

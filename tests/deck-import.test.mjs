@@ -64,3 +64,11 @@ test("an invalid custom opponent deck falls back to a premade deck", () => {
 	assert.ok(deck.faction);
 	assert.equal(window.document.getElementById("op-preview-leader").children[1].textContent, "Random");
 });
+test("an unknown leader index keeps the current leader instead of crashing", () => {
+	const { page } = setup();
+	const current = page.dm.leader.index;
+	page.dm.setLeader(999999);
+	assert.equal(page.dm.leader.index, current);
+	page.dm.setLeader("__proto__");
+	assert.equal(page.dm.leader.index, current);
+});
