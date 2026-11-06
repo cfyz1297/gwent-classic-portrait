@@ -39,7 +39,7 @@ var factions = {
 		factionAbility: player => game.gameStart.push( async () => {
 			let notif = "";
 			if (player === player_me) {
-				await ui.popup("Go First", () => game.firstPlayer = player, "Let Opponent Start", () => game.firstPlayer = player.opponent(), "Would you like to go first?", "The Scoia'tael faction perk allows you to decide who will get to go first.", 0.55);
+				await ui.popup("Ходить первым", () => game.firstPlayer = player, "Пусть начинает соперник", () => game.firstPlayer = player.opponent(), "Кто сделает первый ход?", "Скоя'таэли решают, кто ходит первым.", 0.55);
 				notif = game.firstPlayer.tag + "-first";
 			} else if (player.hand instanceof HandAI) {
 				if (Math.random() < 0.5) {

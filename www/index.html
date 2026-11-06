@@ -43,7 +43,7 @@
 				<div><div></div></div>
 			</div>
 			
-			<div id="name-op" class="name">Opponent</div>
+			<div id="name-op" class="name">Соперник</div>
 			<div id="deck-name-op" class="deck-name"></div>
 			
 			<div id="hand-count-op" class="hand-count">6</div>
@@ -53,7 +53,7 @@
 			
 			<div id="score-total-op" class="score-total"><div class="center">0</div></div>
 			
-			<div id="passed-op">Passed</div>
+			<div id="passed-op">Пас</div>
 			
 		</section>
 		
@@ -64,7 +64,7 @@
 			<div class="profile-img">
 				<div><div></div></div>
 			</div>
-			<div id="passed-me">Passed</div>
+			<div id="passed-me">Пас</div>
 			<div id="hand-count-me" class="hand-count">5</div>
 			
 			<div id="gem1-me" class="gem gem-on bg-contain"></div>
@@ -206,28 +206,28 @@
 			<tbody>
 				<tr>
 					<th colspan="2"></th>
-					<th>Round 1</th>
-					<th>Round 2</th>
-					<th>Round 3</th>
+					<th>Раунд 1</th>
+					<th>Раунд 2</th>
+					<th>Раунд 3</th>
 				</tr>
 				<tr>
-					<th colspan="2">Geralt</th>
+					<th colspan="2">Геральт</th>
 					<td>0</td>
 					<td>0</td>
 					<td>0</td>
 				</tr>
 				<tr>
-					<th colspan="2">Opponent</th>
+					<th colspan="2">Соперник</th>
 					<td>0</td>
 					<td>0</td>
 					<td>0</td>
 				</tr>
 			</tbody>
 		</table>
-		<p class="hide">The battle cannot end in a draw. You can play a rematch using the same decks or surrender.</p>
-		<button>Customize</button>
-		<button>Rematch</button>
-		<button>New Game</button>
+		<p class="hide">Партия не может закончиться вничью. Можно сыграть ещё раз теми же колодами или выйти.</p>
+		<button>К колоде</button>
+		<button>Ещё раз</button>
+		<button>Новая игра</button>
 	</section>
 	
 	<section id="deck-selector">
@@ -245,47 +245,47 @@
 	
 	<label id="upload-deck" class="deck-options">
 		<input type="file" id="add-file" value="Import" style="display:none;"/>
-		Upload Deck
+		Загрузить колоду
 	</label>
 	
-	<a id="change-faction" class="deck-options">Change Faction</a>
+	<a id="change-faction" class="deck-options">Сменить фракцию</a>
 	
-	<a id="download-deck" class="deck-options">Download Deck</a>
+	<a id="download-deck" class="deck-options">Скачать колоду</a>
 	<a id="download-json" style="display:none;"></a>
 	
-	<h2 id="card-bank-title" class="card-contianer-title">Card Collection</h2>
-	<h2 id="card-deck-title" class="card-contianer-title">Cards in Deck</h2>
+	<h2 id="card-bank-title" class="card-contianer-title">Коллекция</h2>
+	<h2 id="card-deck-title" class="card-contianer-title">Колода</h2>
 	<div id="card-bank" class="card-array">
 	</div>
 	<div id="card-deck" class="card-array">
 	</div>
 	<div id="card-leader">
-		<p>Leader</p>
+		<p>Лидер</p>
 		<div></div>
 	</div>
 	<div id="deck-stats">
-		<p>Total cards in deck</p>
+		<p>Карт в колоде</p>
 		<p>0</p>
-		<p>Number of Unit Cards</p>
+		<p>Отряды (минимум 22)</p>
 		<p>0</p>
-		<p>Special Cards</p>
+		<p>Особые (максимум 10)</p>
 		<p>0/10</p>
-		<p>Total Unit Card Strength</p>
+		<p>Сумма силы отрядов</p>
 		<p>0</p>
-		<p>Hero Cards</p>
+		<p>Герои</p>
 		<p>0</p>
 	</div>
-	<button id="start-game">Start game</button>
+	<button id="start-game">Начать игру</button>
 	<div id="opponent-preview" class="center">
 		<div>
-			<p>Oponent's Deck</p>
+			<p>Колода соперника</p>
 		</div>
 		<div class="center">
 			<button id="op-preview-open" class="hide" data-title="View opponent"></button>
 			<div id="op-preview-faction" class="hide"></div>
 			<label id="op-preview-leader" for="add-opponent" data-title="Upload opponent">
 				<input type="file" id="add-opponent" style="display:none;"/>
-				<p>Random</p>
+				<p>Случайная</p>
 			</label>
 			<button id="op-preview-clear" class="hide" data-title="Clear opponent"></button>
 		</div>

@@ -484,7 +484,7 @@ class Player {
 		this.name = name;
 		document.getElementById("name-" + this.tag).textContent = name;
 		
-		document.getElementById("deck-name-" +this.tag).innerHTML = factions[deck.faction].name;
+		document.getElementById("deck-name-" +this.tag).textContent = (window.RU && RU.factions && RU.factions[deck.faction]) ? RU.factions[deck.faction].name : factions[deck.faction].name;
 		document.getElementById("stats-" + this.tag).getElementsByClassName("profile-img")[0].children[0].children[0];
 		let x = document.querySelector("#stats-" +this.tag+ " .profile-img > div > div");
 		x.style.backgroundImage = iconURL("deck_shield_" + deck.faction);
@@ -1669,9 +1669,9 @@ class Game {
 	{
 		AudioManager.playSFX('warning');
 		ui.popup(
-			"Resume", ()=>{},
-			"Exit", ()=>this.returnToCustomization(),
-			"Quit curent game?" , "This will return you to the deck customization menu."
+			"Продолжить", ()=>{},
+			"Выйти", ()=>this.returnToCustomization(),
+			"Выйти из партии?" , "Вы вернётесь к сборке колоды. Партия не сохранится."
 		); 
 	}
 	
@@ -1691,7 +1691,7 @@ class Game {
 	{
 		this.reset();
 		player_me.reset();
-		player_op = new Player('op', 'Player 2', dm.constructOpponentDeck(false));
+		player_op = new Player('op', 'Соперник', dm.constructOpponentDeck(false));
 		this.endScreen.classList.add("hide");
 		this.startGame();
 	}
@@ -1751,7 +1751,7 @@ class Card {
 		}
 		
 		if (this.row === "leader")
-			this.desc_name = "Leader Ability";
+			this.desc_name = "Способность лидера";
 		else if (this.abilities.length > 0)
 			this.desc_name = ability_dict[this.abilities[this.abilities.length-1]].name;
 		else if (this.row==="agile")
@@ -2875,8 +2875,8 @@ class DeckMaker {
 		};
 		const op_deck = this.constructOpponentDeck(true);
 		
-		player_me = new Player(0, "Player 1", me_deck);
-		player_op = new Player(1, "Player 2", op_deck);
+		player_me = new Player(0, "Геральт", me_deck);
+		player_op = new Player(1, "Соперник", op_deck);
 		
 		this.elem.classList.add("hide");
 		game.startGame();

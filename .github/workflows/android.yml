@@ -124,18 +124,63 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+  apk-ru:
+    name: Build Russian APK
+    needs: [test, security]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Android SDK
+        run: |
+          set -euo pipefail
+          SDK="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
+          echo "platforms: $(ls "$SDK/platforms" 2>/dev/null | tr '\n' ' ')"
+          echo "build-tools: $(ls "$SDK/build-tools" 2>/dev/null | tr '\n' ' ')"
+          if [ ! -d "$SDK/platforms/android-35" ] || [ ! -d "$SDK/build-tools/35.0.0" ]; then
+            SDKMANAGER="$(find "$SDK/cmdline-tools" -name sdkmanager -type f 2>/dev/null | sort | tail -n1)"
+            yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
+            "$SDKMANAGER" --install "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+          fi
+
+      - name: Install
+        run: npm ci
+
+      - name: Build Russian variant
+        run: node scripts/build-ru-variant.mjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gwent-classic-portrait-ru-debug
+          path: artifacts/gwent-classic-portrait-ru-*.apk
+          if-no-files-found: error
+          retention-days: 30
+
   release:
     name: Attach APK to release
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: apk
+    needs: [apk, apk-ru]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: gwent-classic-portrait-debug
+          pattern: gwent-classic-portrait-*
           path: artifacts
+          merge-multiple: true
 
       - uses: softprops/action-gh-release@v2
         with:

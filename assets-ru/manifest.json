@@ -1,0 +1,1552 @@
+{
+  "source": "duskworld.ru / diablo1.ru card archive",
+  "matching": "perceptual hash of the illustration area",
+  "threshold": 60,
+  "total": 214,
+  "cards": [
+    {
+      "en": "monsters_arachas_1.jpg",
+      "ru": "Монстры/mons_16.png",
+      "deck": "monsters",
+      "filename": "arachas_1",
+      "distance": 32
+    },
+    {
+      "en": "monsters_arachas_2.jpg",
+      "ru": "Монстры/mons_17.png",
+      "deck": "monsters",
+      "filename": "arachas_2",
+      "distance": 27
+    },
+    {
+      "en": "monsters_arachas_behemoth.jpg",
+      "ru": "Монстры/mons_36.png",
+      "deck": "monsters",
+      "filename": "arachas_behemoth",
+      "distance": 23
+    },
+    {
+      "en": "monsters_arachas.jpg",
+      "ru": "Монстры/mons_15.png",
+      "deck": "monsters",
+      "filename": "arachas",
+      "distance": 28
+    },
+    {
+      "en": "monsters_bruxa.jpg",
+      "ru": "Монстры/mons_19.png",
+      "deck": "monsters",
+      "filename": "bruxa",
+      "distance": 33
+    },
+    {
+      "en": "monsters_celaeno_harpy.jpg",
+      "ru": "Монстры/mons_12.png",
+      "deck": "monsters",
+      "filename": "celaeno_harpy",
+      "distance": 29
+    },
+    {
+      "en": "monsters_cockatrice.jpg",
+      "ru": "Монстры/mons_11.png",
+      "deck": "monsters",
+      "filename": "cockatrice",
+      "distance": 27
+    },
+    {
+      "en": "monsters_draug.jpg",
+      "ru": "Монстры/mons_h2.png",
+      "deck": "monsters",
+      "filename": "draug",
+      "distance": 25
+    },
+    {
+      "en": "monsters_earth_elemental.jpg",
+      "ru": "Монстры/mons_34.png",
+      "deck": "monsters",
+      "filename": "earth_elemental",
+      "distance": 19
+    },
+    {
+      "en": "monsters_ekkima.jpg",
+      "ru": "Монстры/mons_20.png",
+      "deck": "monsters",
+      "filename": "ekkima",
+      "distance": 33
+    },
+    {
+      "en": "monsters_endrega.jpg",
+      "ru": "Монстры/mons_10.png",
+      "deck": "monsters",
+      "filename": "endrega",
+      "distance": 30
+    },
+    {
+      "en": "monsters_eredin_bronze.jpg",
+      "ru": "Лидеры/lid_m3.png",
+      "deck": "monsters",
+      "filename": "eredin_bronze",
+      "distance": 25
+    },
+    {
+      "en": "monsters_eredin_copper.jpg",
+      "ru": "Лидеры/lid_m4.png",
+      "deck": "monsters",
+      "filename": "eredin_copper",
+      "distance": 42
+    },
+    {
+      "en": "monsters_eredin_gold.jpg",
+      "ru": "Лидеры/lid_m1.png",
+      "deck": "monsters",
+      "filename": "eredin_gold",
+      "distance": 25
+    },
+    {
+      "en": "monsters_eredin_silver.jpg",
+      "ru": "Лидеры/lid_m2.png",
+      "deck": "monsters",
+      "filename": "eredin_silver",
+      "distance": 25
+    },
+    {
+      "en": "monsters_eredin_the_treacherous.jpg",
+      "ru": "Лидеры/lid_m5.png",
+      "deck": "monsters",
+      "filename": "eredin_the_treacherous",
+      "distance": 32
+    },
+    {
+      "en": "monsters_fiend.jpg",
+      "ru": "Монстры/mons_30.png",
+      "deck": "monsters",
+      "filename": "fiend",
+      "distance": 18
+    },
+    {
+      "en": "monsters_fire_elemental.jpg",
+      "ru": "Монстры/mons_35.png",
+      "deck": "monsters",
+      "filename": "fire_elemental",
+      "distance": 21
+    },
+    {
+      "en": "monsters_fleder.jpg",
+      "ru": "Монстры/mons_21.png",
+      "deck": "monsters",
+      "filename": "fleder",
+      "distance": 29
+    },
+    {
+      "en": "monsters_fogling.jpg",
+      "ru": "Монстры/mons_7.png",
+      "deck": "monsters",
+      "filename": "fogling",
+      "distance": 29
+    },
+    {
+      "en": "monsters_forktail.jpg",
+      "ru": "Монстры/mons_24.png",
+      "deck": "monsters",
+      "filename": "forktail",
+      "distance": 17
+    },
+    {
+      "en": "monsters_frightener.jpg",
+      "ru": "Монстры/mons_22.png",
+      "deck": "monsters",
+      "filename": "frightener",
+      "distance": 25
+    },
+    {
+      "en": "monsters_frost_giant.jpg",
+      "ru": "Монстры/mons_29.png",
+      "deck": "monsters",
+      "filename": "frost_giant",
+      "distance": 26
+    },
+    {
+      "en": "monsters_gargoyle.jpg",
+      "ru": "Монстры/mons_9.png",
+      "deck": "monsters",
+      "filename": "gargoyle",
+      "distance": 30
+    },
+    {
+      "en": "monsters_garkain.jpg",
+      "ru": "Монстры/mons_18.png",
+      "deck": "monsters",
+      "filename": "garkain",
+      "distance": 27
+    },
+    {
+      "en": "monsters_ghoul_1.jpg",
+      "ru": "Монстры/mons_2.png",
+      "deck": "monsters",
+      "filename": "ghoul_1",
+      "distance": 37
+    },
+    {
+      "en": "monsters_ghoul_2.jpg",
+      "ru": "Монстры/mons_1.png",
+      "deck": "monsters",
+      "filename": "ghoul_2",
+      "distance": 26
+    },
+    {
+      "en": "monsters_ghoul.jpg",
+      "ru": "Монстры/mons_3.png",
+      "deck": "monsters",
+      "filename": "ghoul",
+      "distance": 25
+    },
+    {
+      "en": "monsters_gravehag.jpg",
+      "ru": "Монстры/mons_28.png",
+      "deck": "monsters",
+      "filename": "gravehag",
+      "distance": 21
+    },
+    {
+      "en": "monsters_gryffin.jpg",
+      "ru": "Монстры/mons_23.png",
+      "deck": "monsters",
+      "filename": "gryffin",
+      "distance": 22
+    },
+    {
+      "en": "monsters_harpy.jpg",
+      "ru": "Монстры/mons_13.png",
+      "deck": "monsters",
+      "filename": "harpy",
+      "distance": 21
+    },
+    {
+      "en": "monsters_imlerith.jpg",
+      "ru": "Монстры/mons_h3.png",
+      "deck": "monsters",
+      "filename": "imlerith",
+      "distance": 26
+    },
+    {
+      "en": "monsters_katakan.jpg",
+      "ru": "Монстры/mons_27.png",
+      "deck": "monsters",
+      "filename": "katakan",
+      "distance": 21
+    },
+    {
+      "en": "monsters_kayran.jpg",
+      "ru": "Монстры/mons_h1.png",
+      "deck": "monsters",
+      "filename": "kayran",
+      "distance": 26
+    },
+    {
+      "en": "monsters_leshen.jpg",
+      "ru": "Монстры/mons_h4.png",
+      "deck": "monsters",
+      "filename": "leshen",
+      "distance": 23
+    },
+    {
+      "en": "monsters_mighty_maiden.jpg",
+      "ru": "Монстры/mons_25.png",
+      "deck": "monsters",
+      "filename": "mighty_maiden",
+      "distance": 25
+    },
+    {
+      "en": "monsters_nekker_1.jpg",
+      "ru": "Монстры/mons_6.png",
+      "deck": "monsters",
+      "filename": "nekker_1",
+      "distance": 21
+    },
+    {
+      "en": "monsters_nekker_2.jpg",
+      "ru": "Монстры/mons_5.png",
+      "deck": "monsters",
+      "filename": "nekker_2",
+      "distance": 26
+    },
+    {
+      "en": "monsters_nekker.jpg",
+      "ru": "Монстры/mons_4.png",
+      "deck": "monsters",
+      "filename": "nekker",
+      "distance": 24
+    },
+    {
+      "en": "monsters_poroniec.jpg",
+      "ru": "Монстры/mons_14.png",
+      "deck": "monsters",
+      "filename": "poroniec",
+      "distance": 31
+    },
+    {
+      "en": "monsters_toad.jpg",
+      "ru": "Монстры/mons_37.png",
+      "deck": "monsters",
+      "filename": "toad",
+      "distance": 17
+    },
+    {
+      "en": "monsters_werewolf.jpg",
+      "ru": "Монстры/mons_26.png",
+      "deck": "monsters",
+      "filename": "werewolf",
+      "distance": 21
+    },
+    {
+      "en": "monsters_witch_velen_1.jpg",
+      "ru": "Монстры/mons_32.png",
+      "deck": "monsters",
+      "filename": "witch_velen_1",
+      "distance": 20
+    },
+    {
+      "en": "monsters_witch_velen_2.jpg",
+      "ru": "Монстры/mons_33.png",
+      "deck": "monsters",
+      "filename": "witch_velen_2",
+      "distance": 22
+    },
+    {
+      "en": "monsters_witch_velen.jpg",
+      "ru": "Монстры/mons_31.png",
+      "deck": "monsters",
+      "filename": "witch_velen",
+      "distance": 24
+    },
+    {
+      "en": "monsters_wyvern.jpg",
+      "ru": "Монстры/mons_8.png",
+      "deck": "monsters",
+      "filename": "wyvern",
+      "distance": 19
+    },
+    {
+      "en": "neutral_chort.jpg",
+      "ru": "Нейтральные карты/neit_10.png",
+      "deck": "neutral",
+      "filename": "chort",
+      "distance": 19
+    },
+    {
+      "en": "neutral_ciri.jpg",
+      "ru": "Нейтральные карты/neit_h4.png",
+      "deck": "neutral",
+      "filename": "ciri",
+      "distance": 30
+    },
+    {
+      "en": "neutral_cow.jpg",
+      "ru": "Нейтральные карты/neit_9.png",
+      "deck": "neutral",
+      "filename": "cow",
+      "distance": 33
+    },
+    {
+      "en": "neutral_dandelion.jpg",
+      "ru": "Нейтральные карты/neit_1.png",
+      "deck": "neutral",
+      "filename": "dandelion",
+      "distance": 27
+    },
+    {
+      "en": "neutral_emiel.jpg",
+      "ru": "Нейтральные карты/neit_3.png",
+      "deck": "neutral",
+      "filename": "emiel",
+      "distance": 20
+    },
+    {
+      "en": "neutral_gaunter_odimm_darkness.jpg",
+      "ru": "Нейтральные карты/neit_7.png",
+      "deck": "neutral",
+      "filename": "gaunter_odimm_darkness",
+      "distance": 18
+    },
+    {
+      "en": "neutral_gaunter_odimm.jpg",
+      "ru": "Нейтральные карты/neit_6.png",
+      "deck": "neutral",
+      "filename": "gaunter_odimm",
+      "distance": 23
+    },
+    {
+      "en": "neutral_geralt.jpg",
+      "ru": "Нейтральные карты/neit_h5.png",
+      "deck": "neutral",
+      "filename": "geralt",
+      "distance": 27
+    },
+    {
+      "en": "neutral_mysterious_elf.jpg",
+      "ru": "Нейтральные карты/neit_h1.png",
+      "deck": "neutral",
+      "filename": "mysterious_elf",
+      "distance": 30
+    },
+    {
+      "en": "neutral_olgierd.jpg",
+      "ru": "Нейтральные карты/neit_8.png",
+      "deck": "neutral",
+      "filename": "olgierd",
+      "distance": 28
+    },
+    {
+      "en": "neutral_triss.jpg",
+      "ru": "Нейтральные карты/neit_h2.png",
+      "deck": "neutral",
+      "filename": "triss",
+      "distance": 26
+    },
+    {
+      "en": "neutral_vesemir.jpg",
+      "ru": "Нейтральные карты/neit_4.png",
+      "deck": "neutral",
+      "filename": "vesemir",
+      "distance": 25
+    },
+    {
+      "en": "neutral_villen.jpg",
+      "ru": "Нейтральные карты/neit_5.png",
+      "deck": "neutral",
+      "filename": "villen",
+      "distance": 33
+    },
+    {
+      "en": "neutral_yennefer.jpg",
+      "ru": "Нейтральные карты/neit_h3.png",
+      "deck": "neutral",
+      "filename": "yennefer",
+      "distance": 22
+    },
+    {
+      "en": "neutral_zoltan.jpg",
+      "ru": "Нейтральные карты/neit_2.png",
+      "deck": "neutral",
+      "filename": "zoltan",
+      "distance": 24
+    },
+    {
+      "en": "nilfgaard_albrich.jpg",
+      "ru": "Нильфгаард/nilf_7.png",
+      "deck": "nilfgaard",
+      "filename": "albrich",
+      "distance": 22
+    },
+    {
+      "en": "nilfgaard_archer_support_1.jpg",
+      "ru": "Нильфгаард/nilf_2.png",
+      "deck": "nilfgaard",
+      "filename": "archer_support_1",
+      "distance": 22
+    },
+    {
+      "en": "nilfgaard_archer_support.jpg",
+      "ru": "Нильфгаард/nilf_3.png",
+      "deck": "nilfgaard",
+      "filename": "archer_support",
+      "distance": 26
+    },
+    {
+      "en": "nilfgaard_assire.jpg",
+      "ru": "Нильфгаард/nilf_22.png",
+      "deck": "nilfgaard",
+      "filename": "assire",
+      "distance": 33
+    },
+    {
+      "en": "nilfgaard_black_archer_1.jpg",
+      "ru": "Нильфгаард/nilf_27.png",
+      "deck": "nilfgaard",
+      "filename": "black_archer_1",
+      "distance": 27
+    },
+    {
+      "en": "nilfgaard_black_archer.jpg",
+      "ru": "Нильфгаард/nilf_26.png",
+      "deck": "nilfgaard",
+      "filename": "black_archer",
+      "distance": 23
+    },
+    {
+      "en": "nilfgaard_cahir.jpg",
+      "ru": "Нильфгаард/nilf_20.png",
+      "deck": "nilfgaard",
+      "filename": "cahir",
+      "distance": 22
+    },
+    {
+      "en": "nilfgaard_cynthia.jpg",
+      "ru": "Нильфгаард/nilf_15.png",
+      "deck": "nilfgaard",
+      "filename": "cynthia",
+      "distance": 27
+    },
+    {
+      "en": "nilfgaard_emhyr_bronze.jpg",
+      "ru": "Лидеры/lid_n2.png",
+      "deck": "nilfgaard",
+      "filename": "emhyr_bronze",
+      "distance": 28
+    },
+    {
+      "en": "nilfgaard_emhyr_copper.jpg",
+      "ru": "Лидеры/lid_n3.png",
+      "deck": "nilfgaard",
+      "filename": "emhyr_copper",
+      "distance": 26
+    },
+    {
+      "en": "nilfgaard_emhyr_gold.jpg",
+      "ru": "Лидеры/lid_n1.png",
+      "deck": "nilfgaard",
+      "filename": "emhyr_gold",
+      "distance": 25
+    },
+    {
+      "en": "nilfgaard_emhyr_invader_of_the_north.jpg",
+      "ru": "Лидеры/lid_n5.png",
+      "deck": "nilfgaard",
+      "filename": "emhyr_invader_of_the_north",
+      "distance": 21
+    },
+    {
+      "en": "nilfgaard_emhyr_silver.jpg",
+      "ru": "Лидеры/lid_n4.png",
+      "deck": "nilfgaard",
+      "filename": "emhyr_silver",
+      "distance": 24
+    },
+    {
+      "en": "nilfgaard_fringilla.jpg",
+      "ru": "Нильфгаард/nilf_21.png",
+      "deck": "nilfgaard",
+      "filename": "fringilla",
+      "distance": 25
+    },
+    {
+      "en": "nilfgaard_heavy_zerri.jpg",
+      "ru": "Нильфгаард/nilf_28.png",
+      "deck": "nilfgaard",
+      "filename": "heavy_zerri",
+      "distance": 31
+    },
+    {
+      "en": "nilfgaard_imperal_brigade.jpg",
+      "ru": "Нильфгаард/nilf_9.png",
+      "deck": "nilfgaard",
+      "filename": "imperal_brigade",
+      "distance": 29
+    },
+    {
+      "en": "nilfgaard_letho.jpg",
+      "ru": "Нильфгаард/nilf_h1.png",
+      "deck": "nilfgaard",
+      "filename": "letho",
+      "distance": 18
+    },
+    {
+      "en": "nilfgaard_menno.jpg",
+      "ru": "Нильфгаард/nilf_h2.png",
+      "deck": "nilfgaard",
+      "filename": "menno",
+      "distance": 29
+    },
+    {
+      "en": "nilfgaard_moorvran.jpg",
+      "ru": "Нильфгаард/nilf_h4.png",
+      "deck": "nilfgaard",
+      "filename": "moorvran",
+      "distance": 19
+    },
+    {
+      "en": "nilfgaard_morteisen.jpg",
+      "ru": "Нильфгаард/nilf_8.png",
+      "deck": "nilfgaard",
+      "filename": "morteisen",
+      "distance": 23
+    },
+    {
+      "en": "nilfgaard_nauzicaa_2.jpg",
+      "ru": "Нильфгаард/nilf_5.png",
+      "deck": "nilfgaard",
+      "filename": "nauzicaa_2",
+      "distance": 38
+    },
+    {
+      "en": "nilfgaard_puttkammer.jpg",
+      "ru": "Нильфгаард/nilf_10.png",
+      "deck": "nilfgaard",
+      "filename": "puttkammer",
+      "distance": 25
+    },
+    {
+      "en": "nilfgaard_rainfarn.jpg",
+      "ru": "Нильфгаард/nilf_12.png",
+      "deck": "nilfgaard",
+      "filename": "rainfarn",
+      "distance": 19
+    },
+    {
+      "en": "nilfgaard_renuald.jpg",
+      "ru": "Нильфгаард/nilf_18.png",
+      "deck": "nilfgaard",
+      "filename": "renuald",
+      "distance": 18
+    },
+    {
+      "en": "nilfgaard_rotten.jpg",
+      "ru": "Нильфгаард/nilf_11.png",
+      "deck": "nilfgaard",
+      "filename": "rotten",
+      "distance": 23
+    },
+    {
+      "en": "nilfgaard_shilard.jpg",
+      "ru": "Нильфгаард/nilf_24.png",
+      "deck": "nilfgaard",
+      "filename": "shilard",
+      "distance": 28
+    },
+    {
+      "en": "nilfgaard_siege_engineer.jpg",
+      "ru": "Нильфгаард/nilf_23.png",
+      "deck": "nilfgaard",
+      "filename": "siege_engineer",
+      "distance": 24
+    },
+    {
+      "en": "nilfgaard_siege_support.jpg",
+      "ru": "Нильфгаард/nilf_1.png",
+      "deck": "nilfgaard",
+      "filename": "siege_support",
+      "distance": 24
+    },
+    {
+      "en": "nilfgaard_stefan.jpg",
+      "ru": "Нильфгаард/nilf_25.png",
+      "deck": "nilfgaard",
+      "filename": "stefan",
+      "distance": 26
+    },
+    {
+      "en": "nilfgaard_sweers.jpg",
+      "ru": "Нильфгаард/nilf_6.png",
+      "deck": "nilfgaard",
+      "filename": "sweers",
+      "distance": 18
+    },
+    {
+      "en": "nilfgaard_tibor.jpg",
+      "ru": "Нильфгаард/nilf_h3.png",
+      "deck": "nilfgaard",
+      "filename": "tibor",
+      "distance": 24
+    },
+    {
+      "en": "nilfgaard_vanhemar.jpg",
+      "ru": "Нильфгаард/nilf_14.png",
+      "deck": "nilfgaard",
+      "filename": "vanhemar",
+      "distance": 25
+    },
+    {
+      "en": "nilfgaard_vattier.jpg",
+      "ru": "Нильфгаард/nilf_13.png",
+      "deck": "nilfgaard",
+      "filename": "vattier",
+      "distance": 23
+    },
+    {
+      "en": "nilfgaard_vreemde.jpg",
+      "ru": "Нильфгаард/nilf_4.png",
+      "deck": "nilfgaard",
+      "filename": "vreemde",
+      "distance": 21
+    },
+    {
+      "en": "nilfgaard_young_emissary_1.jpg",
+      "ru": "Нильфгаард/nilf_16.png",
+      "deck": "nilfgaard",
+      "filename": "young_emissary_1",
+      "distance": 33
+    },
+    {
+      "en": "nilfgaard_young_emissary.jpg",
+      "ru": "Нильфгаард/nilf_17.png",
+      "deck": "nilfgaard",
+      "filename": "young_emissary",
+      "distance": 25
+    },
+    {
+      "en": "nilfgaard_zerri.jpg",
+      "ru": "Нильфгаард/nilf_19.png",
+      "deck": "nilfgaard",
+      "filename": "zerri",
+      "distance": 33
+    },
+    {
+      "en": "realms_ballista.jpg",
+      "ru": "Королевства севера/sev_23.png",
+      "deck": "realms",
+      "filename": "ballista",
+      "distance": 34
+    },
+    {
+      "en": "realms_banner_nurse.jpg",
+      "ru": "Королевства севера/sev_19.png",
+      "deck": "realms",
+      "filename": "banner_nurse",
+      "distance": 15
+    },
+    {
+      "en": "realms_blue_stripes.jpg",
+      "ru": "Королевства севера/sev_10.png",
+      "deck": "realms",
+      "filename": "blue_stripes",
+      "distance": 21
+    },
+    {
+      "en": "realms_catapult_1.jpg",
+      "ru": "Королевства севера/sev_25.png",
+      "deck": "realms",
+      "filename": "catapult_1",
+      "distance": 34
+    },
+    {
+      "en": "realms_crinfrid.jpg",
+      "ru": "Королевства севера/sev_18.png",
+      "deck": "realms",
+      "filename": "crinfrid",
+      "distance": 20
+    },
+    {
+      "en": "realms_dethmold.jpg",
+      "ru": "Королевства севера/sev_20.png",
+      "deck": "realms",
+      "filename": "dethmold",
+      "distance": 21
+    },
+    {
+      "en": "realms_dijkstra.jpg",
+      "ru": "Королевства севера/sev_11.png",
+      "deck": "realms",
+      "filename": "dijkstra",
+      "distance": 18
+    },
+    {
+      "en": "realms_esterad.jpg",
+      "ru": "Королевства севера/sev_h2.png",
+      "deck": "realms",
+      "filename": "esterad",
+      "distance": 18
+    },
+    {
+      "en": "realms_foltest_bronze.jpg",
+      "ru": "Лидеры/lid_k4.png",
+      "deck": "realms",
+      "filename": "foltest_bronze",
+      "distance": 32
+    },
+    {
+      "en": "realms_foltest_copper.jpg",
+      "ru": "Лидеры/lid_k3.png",
+      "deck": "realms",
+      "filename": "foltest_copper",
+      "distance": 46
+    },
+    {
+      "en": "realms_foltest_gold.jpg",
+      "ru": "Лидеры/lid_k2.png",
+      "deck": "realms",
+      "filename": "foltest_gold",
+      "distance": 26
+    },
+    {
+      "en": "realms_foltest_silver.jpg",
+      "ru": "Лидеры/lid_k1.png",
+      "deck": "realms",
+      "filename": "foltest_silver",
+      "distance": 30
+    },
+    {
+      "en": "realms_foltest_son_of_medell.jpg",
+      "ru": "Лидеры/lid_k5.png",
+      "deck": "realms",
+      "filename": "foltest_son_of_medell",
+      "distance": 28
+    },
+    {
+      "en": "realms_kaedwen_siege_1.jpg",
+      "ru": "Королевства севера/sev_5.png",
+      "deck": "realms",
+      "filename": "kaedwen_siege_1",
+      "distance": 32
+    },
+    {
+      "en": "realms_kaedwen_siege_2.jpg",
+      "ru": "Королевства севера/sev_6.png",
+      "deck": "realms",
+      "filename": "kaedwen_siege_2",
+      "distance": 21
+    },
+    {
+      "en": "realms_kaedwen_siege.jpg",
+      "ru": "Королевства севера/sev_4.png",
+      "deck": "realms",
+      "filename": "kaedwen_siege",
+      "distance": 32
+    },
+    {
+      "en": "realms_keira.jpg",
+      "ru": "Королевства севера/sev_16.png",
+      "deck": "realms",
+      "filename": "keira",
+      "distance": 27
+    },
+    {
+      "en": "realms_natalis.jpg",
+      "ru": "Королевства севера/sev_h3.png",
+      "deck": "realms",
+      "filename": "natalis",
+      "distance": 14
+    },
+    {
+      "en": "realms_philippa.jpg",
+      "ru": "Королевства севера/sev_h4.png",
+      "deck": "realms",
+      "filename": "philippa",
+      "distance": 10
+    },
+    {
+      "en": "realms_poor_infantry.jpg",
+      "ru": "Королевства севера/sev_1.png",
+      "deck": "realms",
+      "filename": "poor_infantry",
+      "distance": 18
+    },
+    {
+      "en": "realms_redania_1.jpg",
+      "ru": "Королевства севера/sev_3.png",
+      "deck": "realms",
+      "filename": "redania_1",
+      "distance": 23
+    },
+    {
+      "en": "realms_redania.jpg",
+      "ru": "Королевства севера/sev_2.png",
+      "deck": "realms",
+      "filename": "redania",
+      "distance": 27
+    },
+    {
+      "en": "realms_sabrina.jpg",
+      "ru": "Королевства севера/sev_12.png",
+      "deck": "realms",
+      "filename": "sabrina",
+      "distance": 26
+    },
+    {
+      "en": "realms_sheala.jpg",
+      "ru": "Королевства севера/sev_17.png",
+      "deck": "realms",
+      "filename": "sheala",
+      "distance": 24
+    },
+    {
+      "en": "realms_sheldon.jpg",
+      "ru": "Королевства севера/sev_9.png",
+      "deck": "realms",
+      "filename": "sheldon",
+      "distance": 29
+    },
+    {
+      "en": "realms_siege_tower.jpg",
+      "ru": "Королевства севера/sev_24.png",
+      "deck": "realms",
+      "filename": "siege_tower",
+      "distance": 29
+    },
+    {
+      "en": "realms_siegfried.jpg",
+      "ru": "Королевства севера/sev_14.png",
+      "deck": "realms",
+      "filename": "siegfried",
+      "distance": 25
+    },
+    {
+      "en": "realms_stennis.jpg",
+      "ru": "Королевства севера/sev_15.png",
+      "deck": "realms",
+      "filename": "stennis",
+      "distance": 27
+    },
+    {
+      "en": "realms_thaler.jpg",
+      "ru": "Королевства севера/sev_7.png",
+      "deck": "realms",
+      "filename": "thaler",
+      "distance": 25
+    },
+    {
+      "en": "realms_trebuchet_1.jpg",
+      "ru": "Королевства севера/sev_22.png",
+      "deck": "realms",
+      "filename": "trebuchet_1",
+      "distance": 39
+    },
+    {
+      "en": "realms_trebuchet.jpg",
+      "ru": "Королевства севера/sev_21.png",
+      "deck": "realms",
+      "filename": "trebuchet",
+      "distance": 21
+    },
+    {
+      "en": "realms_vernon.jpg",
+      "ru": "Королевства севера/sev_h1.png",
+      "deck": "realms",
+      "filename": "vernon",
+      "distance": 33
+    },
+    {
+      "en": "realms_ves.jpg",
+      "ru": "Королевства севера/sev_13.png",
+      "deck": "realms",
+      "filename": "ves",
+      "distance": 33
+    },
+    {
+      "en": "realms_yarpen.jpg",
+      "ru": "Королевства севера/sev_8.png",
+      "deck": "realms",
+      "filename": "yarpen",
+      "distance": 26
+    },
+    {
+      "en": "scoiatael_barclay.jpg",
+      "ru": "Скоятаэли/skoa_29.png",
+      "deck": "scoiatael",
+      "filename": "barclay",
+      "distance": 29
+    },
+    {
+      "en": "scoiatael_ciaran.jpg",
+      "ru": "Скоятаэли/skoa_12.png",
+      "deck": "scoiatael",
+      "filename": "ciaran",
+      "distance": 24
+    },
+    {
+      "en": "scoiatael_dennis.jpg",
+      "ru": "Скоятаэли/skoa_25.png",
+      "deck": "scoiatael",
+      "filename": "dennis",
+      "distance": 19
+    },
+    {
+      "en": "scoiatael_dol_archer.jpg",
+      "ru": "Скоятаэли/skoa_14.png",
+      "deck": "scoiatael",
+      "filename": "dol_archer",
+      "distance": 22
+    },
+    {
+      "en": "scoiatael_dol_infantry_1.jpg",
+      "ru": "Скоятаэли/skoa_31.png",
+      "deck": "scoiatael",
+      "filename": "dol_infantry_1",
+      "distance": 32
+    },
+    {
+      "en": "scoiatael_dol_infantry_2.jpg",
+      "ru": "Скоятаэли/skoa_32.png",
+      "deck": "scoiatael",
+      "filename": "dol_infantry_2",
+      "distance": 18
+    },
+    {
+      "en": "scoiatael_dol_infantry.jpg",
+      "ru": "Скоятаэли/skoa_30.png",
+      "deck": "scoiatael",
+      "filename": "dol_infantry",
+      "distance": 20
+    },
+    {
+      "en": "scoiatael_dwarf_1.jpg",
+      "ru": "Скоятаэли/skoa_10.png",
+      "deck": "scoiatael",
+      "filename": "dwarf_1",
+      "distance": 21
+    },
+    {
+      "en": "scoiatael_dwarf_2.jpg",
+      "ru": "Скоятаэли/skoa_9.png",
+      "deck": "scoiatael",
+      "filename": "dwarf_2",
+      "distance": 20
+    },
+    {
+      "en": "scoiatael_dwarf.jpg",
+      "ru": "Скоятаэли/skoa_11.png",
+      "deck": "scoiatael",
+      "filename": "dwarf",
+      "distance": 25
+    },
+    {
+      "en": "scoiatael_eithne.jpg",
+      "ru": "Скоятаэли/skoa_h2.png",
+      "deck": "scoiatael",
+      "filename": "eithne",
+      "distance": 26
+    },
+    {
+      "en": "scoiatael_elf_skirmisher_1.jpg",
+      "ru": "Скоятаэли/skoa_6.png",
+      "deck": "scoiatael",
+      "filename": "elf_skirmisher_1",
+      "distance": 24
+    },
+    {
+      "en": "scoiatael_elf_skirmisher_2.jpg",
+      "ru": "Скоятаэли/skoa_7.png",
+      "deck": "scoiatael",
+      "filename": "elf_skirmisher_2",
+      "distance": 22
+    },
+    {
+      "en": "scoiatael_elf_skirmisher.jpg",
+      "ru": "Скоятаэли/skoa_8.png",
+      "deck": "scoiatael",
+      "filename": "elf_skirmisher",
+      "distance": 24
+    },
+    {
+      "en": "scoiatael_filavandrel.jpg",
+      "ru": "Скоятаэли/skoa_28.png",
+      "deck": "scoiatael",
+      "filename": "filavandrel",
+      "distance": 21
+    },
+    {
+      "en": "scoiatael_francesca_bronze.jpg",
+      "ru": "Лидеры/lid_s4.png",
+      "deck": "scoiatael",
+      "filename": "francesca_bronze",
+      "distance": 41
+    },
+    {
+      "en": "scoiatael_francesca_copper.jpg",
+      "ru": "Лидеры/lid_s3.png",
+      "deck": "scoiatael",
+      "filename": "francesca_copper",
+      "distance": 27
+    },
+    {
+      "en": "scoiatael_francesca_gold.jpg",
+      "ru": "Лидеры/lid_s1.png",
+      "deck": "scoiatael",
+      "filename": "francesca_gold",
+      "distance": 25
+    },
+    {
+      "en": "scoiatael_francesca_hope_of_the_aen_seidhe.jpg",
+      "ru": "Лидеры/lid_s5.png",
+      "deck": "scoiatael",
+      "filename": "francesca_hope_of_the_aen_seidhe",
+      "distance": 23
+    },
+    {
+      "en": "scoiatael_francesca_silver.jpg",
+      "ru": "Лидеры/lid_s2.png",
+      "deck": "scoiatael",
+      "filename": "francesca_silver",
+      "distance": 33
+    },
+    {
+      "en": "scoiatael_havekar_nurse_1.jpg",
+      "ru": "Скоятаэли/skoa_2.png",
+      "deck": "scoiatael",
+      "filename": "havekar_nurse_1",
+      "distance": 22
+    },
+    {
+      "en": "scoiatael_havekar_nurse_2.jpg",
+      "ru": "Скоятаэли/skoa_3.png",
+      "deck": "scoiatael",
+      "filename": "havekar_nurse_2",
+      "distance": 20
+    },
+    {
+      "en": "scoiatael_havekar_nurse.jpg",
+      "ru": "Скоятаэли/skoa_1.png",
+      "deck": "scoiatael",
+      "filename": "havekar_nurse",
+      "distance": 17
+    },
+    {
+      "en": "scoiatael_havekar_support_1.jpg",
+      "ru": "Скоятаэли/skoa_21.png",
+      "deck": "scoiatael",
+      "filename": "havekar_support_1",
+      "distance": 13
+    },
+    {
+      "en": "scoiatael_havekar_support_2.jpg",
+      "ru": "Скоятаэли/skoa_22.png",
+      "deck": "scoiatael",
+      "filename": "havekar_support_2",
+      "distance": 26
+    },
+    {
+      "en": "scoiatael_havekar_support.jpg",
+      "ru": "Скоятаэли/skoa_20.png",
+      "deck": "scoiatael",
+      "filename": "havekar_support",
+      "distance": 22
+    },
+    {
+      "en": "scoiatael_ida.jpg",
+      "ru": "Скоятаэли/skoa_26.png",
+      "deck": "scoiatael",
+      "filename": "ida",
+      "distance": 20
+    },
+    {
+      "en": "scoiatael_iorveth.jpg",
+      "ru": "Скоятаэли/skoa_h4.png",
+      "deck": "scoiatael",
+      "filename": "iorveth",
+      "distance": 28
+    },
+    {
+      "en": "scoiatael_isengrim.jpg",
+      "ru": "Скоятаэли/skoa_h1.png",
+      "deck": "scoiatael",
+      "filename": "isengrim",
+      "distance": 19
+    },
+    {
+      "en": "scoiatael_mahakam_1.jpg",
+      "ru": "Скоятаэли/skoa_15.png",
+      "deck": "scoiatael",
+      "filename": "mahakam_1",
+      "distance": 27
+    },
+    {
+      "en": "scoiatael_mahakam_2.jpg",
+      "ru": "Скоятаэли/skoa_17.png",
+      "deck": "scoiatael",
+      "filename": "mahakam_2",
+      "distance": 33
+    },
+    {
+      "en": "scoiatael_mahakam_3.jpg",
+      "ru": "Скоятаэли/skoa_18.png",
+      "deck": "scoiatael",
+      "filename": "mahakam_3",
+      "distance": 21
+    },
+    {
+      "en": "scoiatael_mahakam_4.jpg",
+      "ru": "Скоятаэли/skoa_19.png",
+      "deck": "scoiatael",
+      "filename": "mahakam_4",
+      "distance": 11
+    },
+    {
+      "en": "scoiatael_mahakam.jpg",
+      "ru": "Скоятаэли/skoa_16.png",
+      "deck": "scoiatael",
+      "filename": "mahakam",
+      "distance": 22
+    },
+    {
+      "en": "scoiatael_milva.jpg",
+      "ru": "Скоятаэли/skoa_33.png",
+      "deck": "scoiatael",
+      "filename": "milva",
+      "distance": 27
+    },
+    {
+      "en": "scoiatael_riordain.jpg",
+      "ru": "Скоятаэли/skoa_4.png",
+      "deck": "scoiatael",
+      "filename": "riordain",
+      "distance": 23
+    },
+    {
+      "en": "scoiatael_saskia.jpg",
+      "ru": "Скоятаэли/skoa_h3.png",
+      "deck": "scoiatael",
+      "filename": "saskia",
+      "distance": 36
+    },
+    {
+      "en": "scoiatael_schirru.jpg",
+      "ru": "Скоятаэли/skoa_34.png",
+      "deck": "scoiatael",
+      "filename": "schirru",
+      "distance": 23
+    },
+    {
+      "en": "scoiatael_toruviel.jpg",
+      "ru": "Скоятаэли/skoa_5.png",
+      "deck": "scoiatael",
+      "filename": "toruviel",
+      "distance": 16
+    },
+    {
+      "en": "scoiatael_vrihedd_brigade_1.jpg",
+      "ru": "Скоятаэли/skoa_24.png",
+      "deck": "scoiatael",
+      "filename": "vrihedd_brigade_1",
+      "distance": 26
+    },
+    {
+      "en": "scoiatael_vrihedd_brigade.jpg",
+      "ru": "Скоятаэли/skoa_23.png",
+      "deck": "scoiatael",
+      "filename": "vrihedd_brigade",
+      "distance": 22
+    },
+    {
+      "en": "scoiatael_vrihedd_cadet.jpg",
+      "ru": "Скоятаэли/skoa_13.png",
+      "deck": "scoiatael",
+      "filename": "vrihedd_cadet",
+      "distance": 20
+    },
+    {
+      "en": "scoiatael_yaevinn.jpg",
+      "ru": "Скоятаэли/skoa_27.png",
+      "deck": "scoiatael",
+      "filename": "yaevinn",
+      "distance": 13
+    },
+    {
+      "en": "skellige_berserker.jpg",
+      "ru": "Скеллиге/skel_16.png",
+      "deck": "skellige",
+      "filename": "berserker",
+      "distance": 19
+    },
+    {
+      "en": "skellige_birna.jpg",
+      "ru": "Скеллиге/skel_4.png",
+      "deck": "skellige",
+      "filename": "birna",
+      "distance": 21
+    },
+    {
+      "en": "skellige_blueboy.jpg",
+      "ru": "Скеллиге/skel_20.png",
+      "deck": "skellige",
+      "filename": "blueboy",
+      "distance": 28
+    },
+    {
+      "en": "skellige_brokva_archer.jpg",
+      "ru": "Скеллиге/skel_19.png",
+      "deck": "skellige",
+      "filename": "brokva_archer",
+      "distance": 17
+    },
+    {
+      "en": "skellige_cerys.jpg",
+      "ru": "Скеллиге/skel_h2.png",
+      "deck": "skellige",
+      "filename": "cerys",
+      "distance": 27
+    },
+    {
+      "en": "skellige_crach_an_craite.jpg",
+      "ru": "Лидеры/lid_sk2.png",
+      "deck": "skellige",
+      "filename": "crach_an_craite",
+      "distance": 16
+    },
+    {
+      "en": "skellige_craite_warrior.jpg",
+      "ru": "Скеллиге/skel_22.png",
+      "deck": "skellige",
+      "filename": "craite_warrior",
+      "distance": 31
+    },
+    {
+      "en": "skellige_dimun_pirate.jpg",
+      "ru": "Скеллиге/skel_23.png",
+      "deck": "skellige",
+      "filename": "dimun_pirate",
+      "distance": 19
+    },
+    {
+      "en": "skellige_donar.jpg",
+      "ru": "Скеллиге/skel_8.png",
+      "deck": "skellige",
+      "filename": "donar",
+      "distance": 32
+    },
+    {
+      "en": "skellige_draig.jpg",
+      "ru": "Скеллиге/skel_5.png",
+      "deck": "skellige",
+      "filename": "draig",
+      "distance": 35
+    },
+    {
+      "en": "skellige_ermion.jpg",
+      "ru": "Скеллиге/skel_h1.png",
+      "deck": "skellige",
+      "filename": "ermion",
+      "distance": 21
+    },
+    {
+      "en": "skellige_hemdall.jpg",
+      "ru": "Скеллиге/skel_h4.png",
+      "deck": "skellige",
+      "filename": "hemdall",
+      "distance": 24
+    },
+    {
+      "en": "skellige_heymaey.jpg",
+      "ru": "Скеллиге/skel_11.png",
+      "deck": "skellige",
+      "filename": "heymaey",
+      "distance": 33
+    },
+    {
+      "en": "skellige_hjalmar.jpg",
+      "ru": "Скеллиге/skel_h3.png",
+      "deck": "skellige",
+      "filename": "hjalmar",
+      "distance": 31
+    },
+    {
+      "en": "skellige_holger.jpg",
+      "ru": "Скеллиге/skel_9.png",
+      "deck": "skellige",
+      "filename": "holger",
+      "distance": 20
+    },
+    {
+      "en": "skellige_kambi.jpg",
+      "ru": "Скеллиге/skel_1.png",
+      "deck": "skellige",
+      "filename": "kambi",
+      "distance": 24
+    },
+    {
+      "en": "skellige_king_bran.jpg",
+      "ru": "Лидеры/lid_sk1.png",
+      "deck": "skellige",
+      "filename": "king_bran",
+      "distance": 20
+    },
+    {
+      "en": "skellige_light_longship.jpg",
+      "ru": "Скеллиге/skel_15.png",
+      "deck": "skellige",
+      "filename": "light_longship",
+      "distance": 26
+    },
+    {
+      "en": "skellige_madmad_lugos.jpg",
+      "ru": "Скеллиге/skel_18.png",
+      "deck": "skellige",
+      "filename": "madmad_lugos",
+      "distance": 23
+    },
+    {
+      "en": "skellige_olaf.jpg",
+      "ru": "Скеллиге/skel_24.png",
+      "deck": "skellige",
+      "filename": "olaf",
+      "distance": 25
+    },
+    {
+      "en": "skellige_shield_maiden_1.jpg",
+      "ru": "Скеллиге/skel_13.png",
+      "deck": "skellige",
+      "filename": "shield_maiden_1",
+      "distance": 34
+    },
+    {
+      "en": "skellige_shield_maiden_2.jpg",
+      "ru": "Скеллиге/skel_12.png",
+      "deck": "skellige",
+      "filename": "shield_maiden_2",
+      "distance": 29
+    },
+    {
+      "en": "skellige_shield_maiden.jpg",
+      "ru": "Скеллиге/skel_14.png",
+      "deck": "skellige",
+      "filename": "shield_maiden",
+      "distance": 23
+    },
+    {
+      "en": "skellige_svanrige.jpg",
+      "ru": "Скеллиге/skel_6.png",
+      "deck": "skellige",
+      "filename": "svanrige",
+      "distance": 32
+    },
+    {
+      "en": "skellige_tordarroch.jpg",
+      "ru": "Скеллиге/skel_10.png",
+      "deck": "skellige",
+      "filename": "tordarroch",
+      "distance": 33
+    },
+    {
+      "en": "skellige_udalryk.jpg",
+      "ru": "Скеллиге/skel_7.png",
+      "deck": "skellige",
+      "filename": "udalryk",
+      "distance": 23
+    },
+    {
+      "en": "skellige_vildkaarl.jpg",
+      "ru": "Скеллиге/skel_17.png",
+      "deck": "skellige",
+      "filename": "vildkaarl",
+      "distance": 17
+    },
+    {
+      "en": "skellige_war_longship.jpg",
+      "ru": "Скеллиге/skel_21.png",
+      "deck": "skellige",
+      "filename": "war_longship",
+      "distance": 20
+    },
+    {
+      "en": "skellige_young_berserker.jpg",
+      "ru": "Скеллиге/skel_2.png",
+      "deck": "skellige",
+      "filename": "young_berserker",
+      "distance": 28
+    },
+    {
+      "en": "skellige_young_vildkaarl.jpg",
+      "ru": "Скеллиге/skel_3.png",
+      "deck": "skellige",
+      "filename": "young_vildkaarl",
+      "distance": 35
+    },
+    {
+      "en": "special_decoy.jpg",
+      "ru": "Специальные карты/spec_1.png",
+      "deck": "special",
+      "filename": "decoy",
+      "distance": 27
+    },
+    {
+      "en": "special_horn.jpg",
+      "ru": "Специальные карты/spec_2.png",
+      "deck": "special",
+      "filename": "horn",
+      "distance": 36
+    },
+    {
+      "en": "special_mardroeme.jpg",
+      "ru": "Скеллиге/skel_spec1.png",
+      "deck": "special",
+      "filename": "mardroeme",
+      "distance": 36
+    },
+    {
+      "en": "special_scorch.jpg",
+      "ru": "Специальные карты/spec_3.png",
+      "deck": "special",
+      "filename": "scorch",
+      "distance": 24
+    },
+    {
+      "en": "weather_clear.jpg",
+      "ru": "Специальные карты/spec_p4.png",
+      "deck": "weather",
+      "filename": "clear",
+      "distance": 28
+    },
+    {
+      "en": "weather_fog.jpg",
+      "ru": "Специальные карты/spec_p2.png",
+      "deck": "weather",
+      "filename": "fog",
+      "distance": 26
+    },
+    {
+      "en": "weather_frost.jpg",
+      "ru": "Специальные карты/spec_p1.png",
+      "deck": "weather",
+      "filename": "frost",
+      "distance": 26
+    },
+    {
+      "en": "weather_rain.jpg",
+      "ru": "Специальные карты/spec_p3.png",
+      "deck": "weather",
+      "filename": "rain",
+      "distance": 17
+    },
+    {
+      "en": "weather_storm.jpg",
+      "ru": "Скеллиге/skel_spec2.png",
+      "deck": "weather",
+      "filename": "storm",
+      "distance": 53
+    }
+  ],
+  "missing": [
+    "neutral_roach.jpg",
+    "realms_ballista_1.jpg"
+  ],
+  "skipped": [
+    {
+      "file": "Нейтральные карты/neit_1a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_2a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_3a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_4a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_5a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_h1a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_h2a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_h3a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_h4a.png",
+      "reason": "alternative-art"
+    },
+    {
+      "file": "Нейтральные карты/neit_h5a.png",
+      "reason": "alternative-art"
+    }
+  ]
+}
