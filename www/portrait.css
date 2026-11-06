@@ -589,9 +589,14 @@ html.gwent-portrait .card-preview > .card-lg {
 	position: relative;
 	top: auto;
 	left: auto;
-	width: 62px;
-	height: 88px;
+	width: 78px;
+	height: 112px;
 	flex: none;
+	border-radius: 6px;
+	background-color: #151210;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 }
 
 html.gwent-portrait .card-preview > .card-description {

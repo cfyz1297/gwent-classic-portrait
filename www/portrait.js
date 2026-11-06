@@ -147,11 +147,19 @@
 				var model = unit && row.contains(unit) ? unit._gwentCard : null;
 				var obj = rowObject(row);
 				var index = obj && window.board ? board.row.indexOf(obj) : -1;
-				var legal = !!model && typeof GwentRules !== "undefined" && GwentRules.isDecoyTarget(model, preview.holder, index) && !unit.classList.contains("noclick");
+				// The rule is authoritative: a target placed after the preview was opened
+				// still carries the noclick class, but it is a legal Decoy target.
+				var legal = !!model && typeof GwentRules !== "undefined" && GwentRules.isDecoyTarget(model, preview.holder, index);
 				e.preventDefault();
 				e.stopPropagation();
 				if (!legal) {
-					if (window.gwentHint) gwentHint("Чучелом можно заменить только негеройский отряд на своей стороне.");
+					if (window.gwentHint) {
+						var why = "Чучелом можно заменить только негеройский отряд на своей стороне.";
+						if (model && index >= 0 && index < 3) why = "Чучело работает только на вашей стороне стола.";
+						else if (model && model.hero) why = "Героя нельзя заменить Чучелом.";
+						else if (model && typeof model.isUnit === "function" && !model.isUnit()) why = "Чучелом можно заменить только карту отряда.";
+						gwentHint(why);
+					}
 					return;
 				}
 				if (obj) ui.lastRow = obj;

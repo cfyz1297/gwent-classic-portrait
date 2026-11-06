@@ -12,6 +12,7 @@ android/app/src/main/assets/capacitor.plugins.json
 *.apk
 *.jks
 *.keystore
+!android/keystore/gwent-debug.keystore
 artifacts/
 tmp/
 coverage/

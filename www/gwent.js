@@ -2162,7 +2162,12 @@ class UI {
 	showPreviewVisuals(card){
 		this.previewCard = card;
 		this.preview.classList.remove("hide");
-		this.preview.getElementsByClassName("card-lg")[0].style.backgroundImage = largeURL(card.faction+"_"+card.filename);
+		// Units and specials preview with the art-only face, like the hand; leaders
+		// and factions keep the full printed face because they have no small asset.
+		const art = (card.row === "leader" || card.faction === "faction")
+			? largeURL(card.faction + "_" + card.filename)
+			: smallURL(card.faction + "_" + card.filename);
+		this.preview.getElementsByClassName("card-lg")[0].style.backgroundImage = art;
 		let desc_elem = this.preview.getElementsByClassName("card-description")[0];
 		this.setDescription(card, desc_elem);
 	}

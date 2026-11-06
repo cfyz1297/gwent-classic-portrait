@@ -157,3 +157,21 @@ test("a spy with a stale opponent holder is still decoyed from this side", async
 	assert.equal(spy.holder, me);
 	assert.ok(row.cards.includes(decoy));
 });
+test("Prince Stennis on this side is decoyed like any other spy", async () => {
+	const { page, me } = setup();
+	const stennisData = page.card_dict.find((card) => card.name === "Prince Stennis");
+	assert.ok(stennisData, "Stennis must exist");
+	const stennis = new page.Card(stennisData, me);
+	await page.board.row[3].addCard(stennis);
+	const decoy = new page.Card(cardByName(page, "Decoy"), me);
+	me.hand.addCard(decoy);
+
+	page.ui.selectCard(decoy);
+	assert.equal(page.ui.previewCard, decoy);
+	assert.equal(page.board.row[3].elem.classList.contains("row-selectable"), true);
+	assert.deepEqual(Array.from(page.GwentRules.decoyTargets(page.board.row[3].cards, me, 3)).map((c) => c.name), ["Prince Stennis"]);
+
+	await page.ui.selectCard(stennis);
+	assert.ok(me.hand.cards.includes(stennis));
+	assert.ok(page.board.row[3].cards.includes(decoy));
+});

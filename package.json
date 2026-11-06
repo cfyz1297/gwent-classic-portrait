@@ -1,13 +1,13 @@
 {
   "name": "gwent-classic-portrait",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": true,
   "engines": {
     "node": ">=22.22.2"
   },
   "description": "Portrait phone build of asundr/gwent-classic with Witcher 3 Decoy rules and a faction leader picker. Not an official CD PROJEKT RED product.",
   "scripts": {
-    "test": "node --test tests/rules.test.mjs tests/decoy.test.mjs tests/decoy-flow.test.mjs tests/leader-picker.test.mjs tests/deck-import.test.mjs tests/security.test.mjs tests/i18n.test.mjs tests/ru-assets.test.mjs tests/scorch.test.mjs tests/weather.test.mjs tests/pass.test.mjs tests/berserker.test.mjs tests/spy-draw.test.mjs",
+    "test": "node --test tests/rules.test.mjs tests/decoy.test.mjs tests/decoy-flow.test.mjs tests/leader-picker.test.mjs tests/deck-import.test.mjs tests/security.test.mjs tests/i18n.test.mjs tests/ru-assets.test.mjs tests/scorch.test.mjs tests/weather.test.mjs tests/pass.test.mjs tests/berserker.test.mjs tests/spy-draw.test.mjs tests/ui-preview.test.mjs tests/signing.test.mjs",
     "test:rules": "node --test tests/rules.test.mjs",
     "sync": "cap sync android",
     "assemble": "cd android && ./gradlew assembleDebug",
