@@ -8,7 +8,7 @@
  * restores the default tree afterwards. Requires ANDROID_HOME and JDK 21.
  */
 import { execFileSync } from "node:child_process";
-import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { chmod, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { stageRuWww } from "./stage-ru-www.mjs";
@@ -30,9 +30,11 @@ function run(command, args) {
 	});
 }
 
-function gradle(args) {
+async function gradle(args) {
 	const isWindows = process.platform === "win32";
 	const command = join(gradleDir, isWindows ? "gradlew.bat" : "gradlew");
+	// Git on Windows does not keep the executable bit, so restore it on POSIX.
+	if (!isWindows) await chmod(command, 0o755);
 	execFileSync(command, args, { stdio: "inherit", cwd: gradleDir });
 }
 
@@ -62,7 +64,7 @@ async function main() {
 
 	try {
 		run("npx", ["cap", "sync", "android"]);
-		gradle(["--no-daemon", "assembleDebug", "-PappId=" + APP_ID]);
+		await gradle(["--no-daemon", "assembleDebug", "-PappId=" + APP_ID]);
 
 		const apk = join(gradleDir, "app/build/outputs/apk/debug/app-debug.apk");
 		const artifacts = join(root, "artifacts");
