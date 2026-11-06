@@ -56,3 +56,21 @@ let units = r.cards.filter(c => c.isUnit() && c.holder === card.holder && !c.abi
 - ИИ забирает перевёрнутого шпиона, а не оставляет его на столе;
 - ИИ не тратит Чучело, если на столе только герои;
 - подсказка при отсутствии цели.
+## Версия 1.3.0: сторона вместо владельца
+
+Проверка «владелец совпадает» оказалась недостаточной: у шпиона `holder` меняется
+асинхронно, и в момент обмена он мог ещё указывать на соперника. Теперь
+`GwentRules.isDecoyTarget` смотрит только на **сторону стола** и тип карты, а
+`UI.resolveDecoy` явно передаёт владение тому, кто разыграл Чучело:
+
+```js
+const holder = decoy.holder;
+target.holder = holder;
+await board.toHand(target, row);
+await board.moveTo(decoy, row, holder.hand);
+```
+
+Плюс `ability_dict.spy.placed` сначала добирает карты и меняет владельца, и только
+потом проигрывает анимацию — обмен во время анимации больше не «переворачивает»
+карту обратно. Тест: `tests/decoy.test.mjs` («stale opponent holder») и
+`tests/decoy-flow.test.mjs`.

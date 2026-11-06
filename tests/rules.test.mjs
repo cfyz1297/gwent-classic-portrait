@@ -35,11 +35,11 @@ test("Decoy accepts a non-hero unit on the player side, spies included", () => {
 	assert.equal(rules.isDecoyTarget(unit({ row: "agile" }), me, 5), true);
 });
 
-test("Decoy rejects heroes, specials, the opponent side and foreign holders", () => {
+test("Decoy rejects heroes, specials and the opponent side", () => {
 	assert.equal(rules.isDecoyTarget(unit({ hero: true }), me, 3), false);
 	assert.equal(rules.isDecoyTarget({ row: "", hero: false, abilities: [], holder: me }, me, 3), false);
 	assert.equal(rules.isDecoyTarget(unit(), me, 2), false);
-	assert.equal(rules.isDecoyTarget(unit({ holder: op }), me, 3), false);
+	assert.equal(rules.isDecoyTarget(unit({ holder: op }), me, 3), true, "a card on your side is yours to swap, whoever holds it");
 	assert.equal(rules.isDecoyTarget(null, me, 3), false);
 });
 

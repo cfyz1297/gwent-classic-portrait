@@ -81,6 +81,7 @@ var RU = {
 		king_bran: { description: "В плохую погоду отряды теряют только половину силы." }
 	},
 	cards: {
+		"Bear": "Медведь",
 		"Mysterious Elf": "Таинственный эльф",
 		"Decoy": "Чучело",
 		"Biting Frost": "Трескучий мороз",

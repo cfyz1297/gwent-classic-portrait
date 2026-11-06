@@ -60,7 +60,7 @@ test("enemy spy on this side is a legal Decoy target and comes into hand", async
 	// belongs to this player and stands on this player's side.
 	spy.holder = me;
 	const row = page.board.row[3];
-	row.addCard(spy);
+	await row.addCard(spy);
 	me.hand.addCard(decoy);
 
 	assert.equal(page.GwentRules.isDecoyTarget(spy, me, 3), true, "rules must accept a flipped spy");
@@ -136,4 +136,24 @@ test("Decoy on a second copy stays legal and the hand keeps ordering", async () 
 	assert.ok(me.hand.cards.includes(spyTwo));
 	assert.ok(page.board.row[5].cards.includes(decoy));
 	assert.ok(page.board.row[3].cards.includes(spyOne));
+});
+test("a spy with a stale opponent holder is still decoyed from this side", async () => {
+	const { page, me, op } = setup();
+	const decoy = new page.Card(cardByName(page, "Decoy"), me);
+	const spy = new page.Card(spyCard(page), op);
+	// The placement hook has not flipped the holder yet, but the card already
+	// stands on this player's side. Decoy must still take it.
+	const row = page.board.row[5];
+	await row.addCard(spy);
+	spy.holder = op; // simulate a placement hook that has not flipped yet
+	me.hand.addCard(decoy);
+
+	page.ui.selectCard(decoy);
+	assert.ok(row.elem.classList.contains("row-selectable"), "stale-holder spy must be selectable");
+	assert.equal(spy.elem.classList.contains("noclick"), false);
+
+	await page.ui.selectCard(spy);
+	assert.ok(me.hand.cards.includes(spy), "the spy joins the Decoy owner's hand");
+	assert.equal(spy.holder, me);
+	assert.ok(row.cards.includes(decoy));
 });

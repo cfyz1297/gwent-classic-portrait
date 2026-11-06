@@ -51,15 +51,15 @@
 
 	/* Decoy in The Witcher 3: swap with a non-hero unit standing on *your*
 	   side of the battlefield, then take that card into your hand.
-	   An opponent spy sits on your side and after its placement hook changes
-	   holder to you, so it is a legal target too: Decoying it steals the spy
-	   and lets you replay it for two more cards. Heroes and empty slots are
-	   never legal. */
+	   An opponent spy sits on your side, so it is a legal target even while
+	   its placement hook has not flipped the holder yet: Decoying it steals
+	   the spy and lets you replay it for two more cards. Ownership is decided
+	   by the side of the board, not by the holder field, which also survives
+	   replayed or decoyed spies. Heroes and empty slots are never legal. */
 	function isDecoyTarget(card, decoyHolder, rowIndex, sideStart) {
 		if (!card || !decoyHolder) return false;
 		if (!onSide(rowIndex, sideStart)) return false;
-		if (!isUnit(card)) return false;
-		return card.holder === decoyHolder;
+		return isUnit(card);
 	}
 
 	function decoyTargets(cards, decoyHolder, rowIndex, sideStart) {

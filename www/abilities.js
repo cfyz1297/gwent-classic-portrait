@@ -57,9 +57,25 @@ var ability_dict = {
 		placed: async (card, row) => {
 			if (row.effects.mardroeme === 0)
 				return;
-			row.removeCard(card);
 			const cardId = card.name.indexOf("Young") === -1 ? 206 : 207;
-			await row.addCard(new Card(card_dict[cardId], card.holder));
+			const bearData = card_dict[cardId];
+			if (bearData) {
+				row.removeCard(card);
+				await row.addCard(new Card(bearData, card.holder));
+				return;
+			}
+			// This card set has no separate Bear card: transform in place so the
+			// ability still works and keeps the same illustration.
+			card.name = "Bear";
+			card.basePower = card.power = 12;
+			card.abilities = [];
+			card.placed = [];
+			card.removed = [];
+			card.activated = [];
+			card.desc_name = "";
+			card.desc = "";
+			card.resetPower();
+			row.updateScore();
 		}
 	},
 	vildkarrl: {
@@ -82,17 +98,27 @@ var ability_dict = {
 		placed: async (card, row) => {
 			if (row !== undefined)
 				row.cards.splice( row.cards.indexOf(card), 1);
-			let maxUnits = board.row.map( r => [r,r.maxUnits()] ).filter( p => p[1].length > 0);
+			// Witcher 3: Scorch destroys the strongest unit(s) on the opponent's
+			// side of the battlefield. It never touches the caster's own units.
+			const isMe = typeof player_me !== "undefined" && card.holder === player_me;
+			const rows = board.row.filter( (r, i) => isMe ? i < 3 : i > 2 );
+			let maxPower = 0;
+			for (const r of rows)
+				for (const c of r.cards)
+					if (c.isUnit() && c.power > maxPower)
+						maxPower = c.power;
+			const victims = [];
+			if (maxPower > 0)
+				for (const r of rows)
+					for (const c of r.cards)
+						if (c.isUnit() && c.power === maxPower)
+							victims.push([r, c]);
 			if (row !== undefined)
 				row.cards.push(card);
-			let maxPower = maxUnits.reduce( (a,p) => Math.max(a, p[1][0].power), 0 );
-			let scorched = maxUnits.filter( p => p[1][0].power === maxPower);
-			let cards = scorched.reduce( (a,p) => a.concat( p[1].map(u => [p[0], u])), []);
-			
-			if (cards.length)
+			if (victims.length)
 			{
-				await Promise.all(cards.map( async u => await u[1].animate("scorch", true, false)) );
-				await Promise.all(cards.map( async u => await board.toGrave(u[1], u[0])) );
+				await Promise.all(victims.map( async v => await v[1].animate("scorch", true, false)) );
+				await Promise.all(victims.map( async v => await board.toGrave(v[1], v[0])) );
 			}
 		}
 	},
@@ -139,12 +165,16 @@ var ability_dict = {
 		description: "Place on your opponent's battlefield (counts towards your opponent's total) and draw 2 cards from your deck. ",
 		audio: "spy",
 		placed: async (card) => {
-			await card.animate("spy");
+			// Draw and flip ownership before the animation: a Decoy played during
+			// the spy animation must find a settled card, not one that will flip
+			// back into the opponent's hand afterwards.
+			const owner = card.holder;
 			for (let i=0;i<2;i++) {
-				if (card.holder.deck.cards.length > 0)
-					await card.holder.deck.draw(card.holder.hand);
+				if (owner.deck.cards.length > 0)
+					await owner.deck.draw(owner.hand);
 			}
-			card.holder = card.holder.opponent();
+			card.holder = owner.opponent();
+			await card.animate("spy");
 			AudioManager.playSFX('draw');
 		}
 	},

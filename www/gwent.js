@@ -528,10 +528,14 @@ class Player {
 		this.winning = isWinning;
 	}
 	
-	// Puts the player in the passed state
+	// Puts the player in the passed state. The badge next to the name and the
+	// dimmed half of the board make a pass impossible to miss.
 	setPassed(hasPassed) {
 		if (this.passed ^ hasPassed)
 			document.getElementById("passed-" + this.tag).classList.toggle("passed");
+		const field = document.getElementById("field-" + this.tag);
+		if (field)
+			field.classList.toggle("side-passed", hasPassed);
 		this.passed = hasPassed;
 	}
 	
@@ -1108,6 +1112,8 @@ class Row extends CardContainer {
 	
 	// Activates weather effect and visuals
 	addOverlay(overlay){
+		this.weatherOverlays = this.weatherOverlays || new Set();
+		this.weatherOverlays.add(overlay);
 		this.effects.weather = true;
 		const elem = this.elem_parent.getElementsByClassName("row-weather")[0];
 		elem.classList.add(overlay);
@@ -1117,7 +1123,10 @@ class Row extends CardContainer {
 	
 	// Deactivates weather effect and visuals
 	removeOverlay(overlay){
-		this.effects.weather = false;
+		this.weatherOverlays = this.weatherOverlays || new Set();
+		this.weatherOverlays.delete(overlay);
+		// Several weather cards can cover one row (rain + Skellige Storm).
+		this.effects.weather = this.weatherOverlays.size > 0;
 		const elem = this.elem_parent.getElementsByClassName("row-weather")[0];
 		fadeOut(elem, 500).then(() => elem.classList.remove(overlay));	
 		this.updateScore();
@@ -1155,7 +1164,7 @@ class Row extends CardContainer {
 	
 	// Calculates the current power of a card affected by row affects
 	calcCardScore(card) {
-		if (card.name === "decoy")
+		if (card.abilities.includes("decoy"))
 			return 0;
 		let total = card.basePower;
 		if (card.hero)
@@ -1226,6 +1235,7 @@ class Row extends CardContainer {
 			this.elem_special.removeChild(this.elem_special.firstChild);
 		this.total = 0;
 		//["rain","fog","frost"].forEach( w => this.removeOverlay(w) );
+		this.weatherOverlays = new Set();
 		this.effects = {weather:false, bond: {}, morale: 0, horn: 0, mardroeme: 0};
 	}
 }
@@ -2176,6 +2186,9 @@ class UI {
 	// share this so both follow one rule.
 	async resolveDecoy(decoy, target, row) {
 		const holder = decoy.holder;
+		// The swapped card joins the Decoy owner's hand, whatever its previous
+		// holder field said. This is what makes an opponent spy a real steal.
+		target.holder = holder;
 		await board.toHand(target, row);
 		await board.moveTo(decoy, row, holder.hand);
 	}

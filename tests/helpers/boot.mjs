@@ -38,6 +38,7 @@ const BRIDGE = [
 	"		Controller: Controller,",
 	"		ControllerAI: ControllerAI,",
 	"		board: board,",
+	"		weather: weather,",
 	"		ui: ui,",
 	"		game: game,",
 	"		dm: dm,",

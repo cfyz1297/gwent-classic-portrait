@@ -182,18 +182,28 @@ html.gwent-portrait #passed-me {
 
 html.gwent-portrait #passed-op.passed,
 html.gwent-portrait #passed-me.passed {
-	display: inline;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	width: auto;
 	height: auto;
+	margin: 0 2px;
+	padding: 2px 9px;
+	border-radius: 999px;
+	background: #e0b15a;
+	color: #1a1208;
 	font-size: 0;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 html.gwent-portrait #passed-op.passed::after,
 html.gwent-portrait #passed-me.passed::after {
 	content: "Пас";
-	font-size: 13px;
-	font-weight: 700;
-	color: #e7c27a;
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #1a1208;
 }
 
 html.gwent-portrait .current-turn {
@@ -2205,3 +2215,99 @@ html.gwent-portrait #leader-picker-open {
 html.gwent-portrait #leader-picker-open:active { background: #2a2116; }
 
 html.gwent-portrait body.leader-picker-open { overflow: hidden; }
+/* ------------------------------------------------------------------
+   Passed side: dim the half of the board and stamp it with ПАС
+   ------------------------------------------------------------------ */
+
+html.gwent-portrait #field-op,
+html.gwent-portrait #field-me {
+	position: relative;
+}
+
+html.gwent-portrait #field-op.side-passed,
+html.gwent-portrait #field-me.side-passed {
+	opacity: 0.55;
+}
+
+html.gwent-portrait #field-op.side-passed::after,
+html.gwent-portrait #field-me.side-passed::after {
+	content: "ПАС";
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial, "Noto Sans", sans-serif;
+	font-size: clamp(28px, 9vw, 54px);
+	font-weight: 900;
+	letter-spacing: 0.18em;
+	color: rgba(224, 177, 90, 0.6);
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+	pointer-events: none;
+	z-index: 4;
+}
+
+/* ------------------------------------------------------------------
+   Card overlays: power, row and ability icons scale with the card
+   ------------------------------------------------------------------ */
+
+html.gwent-portrait .card {
+	container-type: inline-size;
+}
+
+html.gwent-portrait .card > div:nth-child(1) {
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	width: max(20px, 36%);
+	height: max(20px, 26%);
+	margin: 0;
+	background-position: center;
+	background-size: contain;
+}
+
+html.gwent-portrait .card > div:nth-child(1) > div {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	padding-top: 3%;
+	font-size: 10px;
+	font-size: clamp(10px, 15cqw, 26px);
+	line-height: 1;
+	font-weight: 800;
+	color: #16110a;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+html.gwent-portrait .hero > div:nth-child(1) > div {
+	color: #fff;
+	text-shadow: 0 1px 2px #000;
+}
+
+html.gwent-portrait .card > div:nth-child(2),
+html.gwent-portrait .card > div:nth-child(3) {
+	position: absolute;
+	top: auto;
+	bottom: 2%;
+	width: max(16px, 26%);
+	height: max(16px, 18%);
+	margin: 0;
+}
+
+html.gwent-portrait .card > div:nth-child(2) {
+	left: auto;
+	right: 2%;
+}
+
+html.gwent-portrait .card > div:nth-child(3) {
+	left: 2%;
+}
+
+html.gwent-portrait .card > div:nth-child(4) {
+	position: absolute;
+	inset: 0;
+}
