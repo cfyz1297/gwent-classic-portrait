@@ -198,53 +198,53 @@ html {
 	align-items: center;
 }
 
-#notif-me-first::after { content:"You will go first"; }
-#notif-op-first::after { content:"Your opponent will go first"; }
+#notif-me-first::after { content:"Вы ходите первым"; }
+#notif-op-first::after { content:"Первым ходит соперник"; }
 
 #notif-me-coin { background-image: url('img/icons/notif_me_coin.png'); }
-#notif-me-coin::after { content:"You will go first"; }
+#notif-me-coin::after { content:"Вы ходите первым"; }
 
 #notif-op-coin { background-image: url('img/icons/notif_op_coin.png'); }
-#notif-op-coin::after { content:"Your opponent will go first"; }
+#notif-op-coin::after { content:"Первым ходит соперник"; }
 
 #notif-round-start { background-image: url('img/icons/notif_round_start.png'); }
-#notif-round-start::after { content:"Round Start"; }
+#notif-round-start::after { content:"Начало раунда"; }
 
 #notif-me-pass { background-image: url('img/icons/notif_round_passed.png'); }
-#notif-me-pass::after { content:"Round passed"; }
+#notif-me-pass::after { content:"Вы спасовали"; }
 
 #notif-op-pass { background-image: url('img/icons/notif_round_passed.png'); }
-#notif-op-pass::after { content:"Your opponent has passed"; }
+#notif-op-pass::after { content:"Соперник спасовал"; }
 
 #notif-win-round { background-image: url('img/icons/notif_win_round.png'); } 
-#notif-win-round::after { content:"You won the round!"; }
+#notif-win-round::after { content:"Вы выиграли раунд!"; }
 
 #notif-lose-round { background-image: url('img/icons/notif_lose_round.png'); }
-#notif-lose-round::after { content:"Your opponent won the round"; }
+#notif-lose-round::after { content:"Соперник выиграл раунд"; }
 
 #notif-draw-round { background-image: url('img/icons/notif_draw_round.png'); }
-#notif-draw-round::after {content:"The round ended in a draw"; }
+#notif-draw-round::after {content:"Раунд закончился вничью"; }
 
 #notif-me-turn { background-image: url('img/icons/notif_me_turn.png'); } 
-#notif-me-turn::after { content:"Your turn!"; }
+#notif-me-turn::after { content:"Ваш ход"; }
 
 #notif-op-turn { background-image: url('img/icons/notif_op_turn.png'); }
-#notif-op-turn::after { content:"Opponent's turn"; }
+#notif-op-turn::after { content:"Ход соперника"; }
 
 #notif-north { background-image: url('img/icons/notif_north.png'); }
-#notif-north::after { content:"Northern Realms faction ability triggered - North draws an additional card."; }
+#notif-north::after { content:"Способность Севера: вы берёте карту."; }
 
 #notif-monsters { background-image: url('img/icons/notif_monsters.png'); }
-#notif-monsters::after { content: "Monsters faction ability triggered - one randomly-chosen Monster Unit Card stays on the board"; }
+#notif-monsters::after { content: "Способность Чудовищ: случайный отряд остаётся на столе."; }
 
 #notif-scoiatael { background-image: url('img/icons/notif_scoiatael.png'); }
-#notif-scoiatael::after { content: "Opponent used the Scoia'tael faction perk to go first."; }
+#notif-scoiatael::after { content: "Соперник использовал способность Скоя'таэлей и ходит первым."; }
 
 #notif-skellige-op{ background-image: url('img/icons/notif_skellige.png'); }
-#notif-skellige-op::after { content: "Opponent Skellige Ability Triggered!"; }
+#notif-skellige-op::after { content: "Способность Скеллиге соперника сработала!"; }
 
 #notif-skellige-me{ background-image: url('img/icons/notif_skellige.png'); }
-#notif-skellige-me::after { content: "Skellige Ability Triggered!"; }
+#notif-skellige-me::after { content: "Способность Скеллиге сработала!"; }
 
 /* ------- card preview ------------- */
 

@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { boot } from "./helpers/boot.mjs";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { boot, wwwDir } from "./helpers/boot.mjs";
 
 function text(window, selector) {
 	const node = window.document.querySelector(selector);
@@ -32,4 +34,22 @@ test("players get Russian names and faction labels", () => {
 	assert.equal(text(window, "#deck-name-op"), "Империя Нильфгаард");
 	me.reset();
 	op.reset();
+});
+test("game notifications are Russian", () => {
+	const css = readFileSync(join(wwwDir, "style.css"), "utf8");
+	for (const text of ["Ваш ход", "Ход соперника", "Вы спасовали", "Соперник спасовал", "Начало раунда", "Вы выиграли раунд!"]) {
+		assert.ok(css.includes('content:"' + text + '"') || css.includes('content: "' + text + '"'), "missing notification: " + text);
+	}
+	for (const english of ["Your turn!", "Opponent's turn", "Round passed", "Your opponent has passed", "Round Start"]) {
+		assert.equal(css.includes(english), false, "English notification left: " + english);
+	}
+});
+
+test("the end screen banner does not tile", () => {
+	const css = readFileSync(join(wwwDir, "portrait.css"), "utf8");
+	const block = css.slice(css.indexOf("html.gwent-portrait #end-screen > :nth-child(1)"));
+	const rule = block.slice(0, block.indexOf("}"));
+	assert.ok(rule.includes("background-repeat: no-repeat"), "banner must not repeat");
+	assert.ok(rule.includes("background-size: contain"));
+	assert.ok(rule.includes("aspect-ratio: 656 / 416"));
 });

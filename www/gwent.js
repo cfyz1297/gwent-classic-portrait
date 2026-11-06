@@ -709,11 +709,6 @@ class CardContainer {
 				return this.removeCard(i);
 	}
 	
-	// Removes and returns any cards up to n that satisfy the predicate.
-	getCardsRandom(predicate, n) {
-		return this.findCardsRandom(predicate, n).map( c => this.removeCard(c) );
-	}
-	
 	// Adds a card to the container along with its associated HTML element.
 	addCard(card, index){
 		if (!card)
@@ -903,10 +898,14 @@ class Deck extends CardContainer {
 	
 	// Sends the top card to the passed hand
 	async draw(hand){
-		if (hand === player_op.hand)
-			hand.addCard(this.removeCard(0));
-		else
-			await board.toHand(this.cards[0], this);
+		if (hand === player_op.hand) {
+			const card = this.removeCard(0);
+			hand.addCard(card);
+			return card;
+		}
+		const card = this.cards[0];
+		await board.toHand(card, this);
+		return card;
 	}
 	
 	// Draws a card and sends it to the container before adding a card from the
@@ -2193,6 +2192,37 @@ class UI {
 		await board.moveTo(decoy, row, holder.hand);
 	}
 	
+	// Shows the cards a spy just drew for a couple of seconds, so the player
+	// can see what entered the hand without opening it.
+	showDrawnCards(cards) {
+		if (!cards || !cards.length)
+			return;
+		let host = document.getElementById("drawn-cards");
+		if (!host) {
+			host = document.createElement("section");
+			host.id = "drawn-cards";
+			host.className = "hide";
+			host.setAttribute("aria-live", "polite");
+			document.body.appendChild(host);
+		}
+		host.textContent = "";
+		const title = document.createElement("p");
+		title.textContent = cards.length === 1 ? "Вы взяли карту" : "Вы взяли карты";
+		host.appendChild(title);
+		const row = document.createElement("div");
+		row.className = "drawn-cards-row";
+		for (const card of cards) {
+			const face = document.createElement("div");
+			face.className = "drawn-card";
+			face.style.backgroundImage = largeURL(card.faction + "_" + card.filename);
+			row.appendChild(face);
+		}
+		host.appendChild(row);
+		host.classList.remove("hide");
+		clearTimeout(this._drawnCardsTimer);
+		this._drawnCardsTimer = setTimeout(() => host.classList.add("hide"), 2600);
+	}
+
 	// Sets up description window for a card
 	setDescription(card, desc){
 		if (!card)
@@ -3164,33 +3194,6 @@ class AudioManager
 	}
 }
 
-class AudioCycle
-{
-	constructor(...paths)
-	{
-		this.sources = [];
-		this.index = 0;
-		for (let i = 0; i < paths.length; ++i)
-		{
-			this.sources.push(audioURL(paths[i]));
-		}
-	}
-
-	play()
-	{
-		this.sources[this.index].play().then(a => {
-			a.pause();
-			a.currentTime = 0;
-		});
-		this.index = (this.index + 1) % this.sources.length;
-	}
-
-	pause()
-	{
-		this.sources.forEach(a => a.pause());
-	}
-}
-
 class ToggleOption
 {
 	constructor(key, enableByDefault = true, action = ()=>{})
@@ -3596,8 +3599,10 @@ function onYouTubeIframeAPIReady() {
 /*----------------------------------------------------*/
 
 
-const eventManager = new EventManager(); 
 let userInteracted = false;
+// The EventManager constructor creates the static GameEvent objects; keep the
+// call even though the instance itself is not referenced.
+new EventManager();
 var ui = new UI();
 var board = new Board();
 var weather = new Weather();

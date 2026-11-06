@@ -169,10 +169,16 @@ var ability_dict = {
 			// the spy animation must find a settled card, not one that will flip
 			// back into the opponent's hand afterwards.
 			const owner = card.holder;
+			const drawn = [];
 			for (let i=0;i<2;i++) {
-				if (owner.deck.cards.length > 0)
-					await owner.deck.draw(owner.hand);
+				if (owner.deck.cards.length > 0) {
+					const picked = await owner.deck.draw(owner.hand);
+					if (picked)
+						drawn.push(picked);
+				}
 			}
+			if (owner === player_me && drawn.length)
+				ui.showDrawnCards(drawn);
 			card.holder = owner.opponent();
 			await card.animate("spy");
 			AudioManager.playSFX('draw');

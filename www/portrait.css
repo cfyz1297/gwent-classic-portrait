@@ -780,9 +780,15 @@ html.gwent-portrait #end-screen > :nth-child(1) {
 	position: relative;
 	top: auto;
 	left: auto;
-	width: min(100%, 320px);
-	height: 140px;
-	margin: 0 auto 8px;
+	flex: none;
+	width: min(100%, 360px);
+	height: auto;
+	aspect-ratio: 656 / 416;
+	max-height: 38vh;
+	margin: 0 auto 10px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 }
 
 html.gwent-portrait #end-screen > table {
@@ -2348,4 +2354,46 @@ html.gwent-portrait .hero > div:nth-child(1) > div {
 	width: 40%;
 	height: 40%;
 	padding-top: 1%;
+}
+/* Cards drawn by a spy: a short, non-blocking preview above the hand. */
+html.gwent-portrait #drawn-cards {
+	position: fixed;
+	left: 50%;
+	bottom: calc(20% + var(--safe-b));
+	transform: translateX(-50%);
+	z-index: 130;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 10px;
+	background: rgba(10, 10, 10, 0.9);
+	border: 1px solid #6d5210;
+	border-radius: 12px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+	pointer-events: none;
+}
+
+html.gwent-portrait #drawn-cards.hide { display: none; }
+
+html.gwent-portrait #drawn-cards p {
+	margin: 0;
+	font-family: Arial, "Noto Sans", sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	color: #e0b15a;
+}
+
+html.gwent-portrait .drawn-cards-row {
+	display: flex;
+	gap: 8px;
+}
+
+html.gwent-portrait .drawn-card {
+	width: 76px;
+	height: 143px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 6px;
 }
