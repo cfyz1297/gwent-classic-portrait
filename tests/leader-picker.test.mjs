@@ -90,3 +90,13 @@ test("Escape closes the picker and restores focus", () => {
 	assert.equal(picker.classList.contains("open"), false);
 	assert.equal(window.document.activeElement, opener);
 });
+test("importing a deck refreshes the Russian leader name", async () => {
+	const { window, page } = setup();
+	const nilfgaardLeader = page.card_dict.findIndex((card) => card.row === "leader" && card.deck === "nilfgaard");
+	page.dm.loadPlayerDeck({ faction: "nilfgaard", leader: nilfgaardLeader, cards: [] }, true);
+	await tick();
+	const label = window.document.getElementById("leader-name-ru").textContent;
+	const expected = window.RU.cards[page.card_dict[nilfgaardLeader].name] || page.card_dict[nilfgaardLeader].name;
+	assert.equal(label, expected);
+	assert.equal(page.dm.leader.index, nilfgaardLeader);
+});

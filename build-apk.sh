@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Debug APK: portrait Gwent. Requires ANDROID_HOME and JDK 17+.
+# Debug APK: portrait Gwent. Requires ANDROID_HOME and JDK 21+.
 set -euo pipefail
 cd "$(dirname "$0")"
 

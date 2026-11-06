@@ -218,6 +218,13 @@
 		return result;
 	};
 
+	var origLoadPlayerDeck = DeckMaker.prototype.loadPlayerDeck;
+	DeckMaker.prototype.loadPlayerDeck = function () {
+		var result = origLoadPlayerDeck.apply(this, arguments);
+		setTimeout(updateLeaderLabel, 0);
+		return result;
+	};
+
 	var origSetLeader = DeckMaker.prototype.setLeader;
 	DeckMaker.prototype.setLeader = function () {
 		var result = origSetLeader.apply(this, arguments);
