@@ -1,0 +1,13 @@
+# Normalize line endings: shell scripts and CI must stay LF.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.mp3 binary
+*.jar binary
+*.apk binary
+*.keystore binary
+*.jks binary

@@ -1,0 +1,10 @@
+{
+  "appId": "com.thinkl.gwentclassic",
+  "appName": "Гвинт",
+  "webDir": "www",
+  "backgroundColor": "#0c0c0c",
+  "android": {
+    "backgroundColor": "#0c0c0c",
+    "allowMixedContent": false
+  }
+}
