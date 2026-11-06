@@ -2311,3 +2311,9 @@ html.gwent-portrait .card > div:nth-child(4) {
 	position: absolute;
 	inset: 0;
 }
+/* Weather cards already show their icon in the art; hide the card overlays. */
+html.gwent-portrait #weather .card > div:nth-child(1),
+html.gwent-portrait #weather .card > div:nth-child(2),
+html.gwent-portrait #weather .card > div:nth-child(3) {
+	display: none;
+}
