@@ -1074,8 +1074,12 @@ class Row extends CardContainer {
 			card.resetPower();
 		}
 		this.updateState(card, false);
-		for (let x of card.removed)
-			x(card);
+		// Removal effects summon replacements (Cow -> Bovine Defense Force). They
+		// belong to real destruction only: while a round is cleared or a game is
+		// reset the board is being emptied, and a spawn would outlive it.
+		if (!this._emptying)
+			for (let x of card.removed)
+				x(card);
 		this.updateScore();
 		return card;
 	}
@@ -1202,7 +1206,12 @@ class Row extends CardContainer {
 		const toGrave  = this.cards.filter(c => !c.noRemove);
 		if (this.special != null)
 			toGrave.push(this.special);
-		await Promise.all(toGrave.map(async c => await board.toGrave(c, this)));
+		this._emptying = true;
+		try {
+			await Promise.all(toGrave.map(async c => await board.toGrave(c, this)));
+		} finally {
+			this._emptying = false;
+		}
 	}
 
 	// Returns all regular unit cards with the heighest power
@@ -1222,15 +1231,20 @@ class Row extends CardContainer {
 	
 	// Override
 	reset(){
-		super.reset();
-		while(this.special)
-			this.removeCard(this.special);
-		while(this.elem_special.firstChild)
-			this.elem_special.removeChild(this.elem_special.firstChild);
-		this.total = 0;
-		//["rain","fog","frost"].forEach( w => this.removeOverlay(w) );
-		this.weatherOverlays = new Set();
-		this.effects = {weather:false, bond: {}, morale: 0, horn: 0, mardroeme: 0};
+		this._emptying = true;
+		try {
+			super.reset();
+			while(this.special)
+				this.removeCard(this.special);
+			while(this.elem_special.firstChild)
+				this.elem_special.removeChild(this.elem_special.firstChild);
+			this.total = 0;
+			//["rain","fog","frost"].forEach( w => this.removeOverlay(w) );
+			this.weatherOverlays = new Set();
+			this.effects = {weather:false, bond: {}, morale: 0, horn: 0, mardroeme: 0};
+		} finally {
+			this._emptying = false;
+		}
 	}
 }
 
@@ -1451,6 +1465,12 @@ class Game {
 		
 		weather.reset();
 		board.row.forEach(r => r.reset());
+		// Rows report their totals to whichever players are bound at the moment.
+		// A fresh game always starts from zero, never from a leftover score.
+		if (player_me && player_me.total)
+			player_me.updateTotal(-player_me.total);
+		if (player_op && player_op.total)
+			player_op.updateTotal(-player_op.total);
 	}
 	
 	// Sets up player faction abilities and psasive leader abilities
@@ -1498,6 +1518,8 @@ class Game {
 	// Sets initializes player abilities, player hands and redraw
 	async startGame() {
 		EventManager.gameOpened.dispatch();
+		// Rows and score are shared by every game, so never inherit them.
+		this.reset();
 		this.initPlayers(player_me, player_op);
 		this.setState(GameState.PLAYING);
 		AudioManager.playSFX('game_opening');
