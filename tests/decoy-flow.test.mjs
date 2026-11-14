@@ -84,6 +84,35 @@ test("the AI does not spend a Decoy when only heroes are available", async () =>
 	assert.equal(actions, 0, "no legal target, no play");
 	assert.ok(op.hand.cards.includes(decoy));
 	assert.ok(page.board.row[1].cards.includes(hero));
+	assert.equal(op.ended, 1, "the turn must end instead of hanging on an unplayable Decoy");
+});
+
+/* Regression: the AI branch knew only the card and guessed index -1, so a Decoy
+   on an ordinary unit was rejected and the turn never ended. The player passed,
+   the opponent froze with cards in hand, and the exit button was locked too. */
+test("the AI decoys its own ordinary unit and ends the turn", async () => {
+	const { page, op } = setup();
+	const unitData = page.card_dict.find((card) => card.row === "close" && card.ability === "" && card.count > 0);
+	assert.ok(unitData, "a plain close-combat unit must exist");
+	const unit = new page.Card(unitData, op);
+	await page.board.row[0].addCard(unit);
+	const decoy = new page.Card(page.card_dict.find((card) => card.name === "Decoy"), op);
+	op.hand.addCard(decoy);
+
+	let actions = 0;
+	op.playCardAction = async (card, action) => {
+		actions++;
+		await action();
+		op.endTurn();
+	};
+
+	const controller = op.controller;
+	await controller.decoy(decoy, controller.getMaximums(), controller.getBoardData());
+
+	assert.equal(actions, 1, "the AI must play the Decoy");
+	assert.ok(op.hand.cards.includes(unit), "the unit joins the AI hand");
+	assert.ok(page.board.row[0].cards.includes(decoy), "the Decoy takes the unit's slot");
+	assert.equal(op.ended, 1, "the turn ends");
 });
 
 test("selecting a Decoy without a target explains the rule", () => {

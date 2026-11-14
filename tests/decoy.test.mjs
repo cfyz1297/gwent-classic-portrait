@@ -175,3 +175,26 @@ test("Prince Stennis on this side is decoyed like any other spy", async () => {
 	assert.ok(me.hand.cards.includes(stennis));
 	assert.ok(page.board.row[3].cards.includes(decoy));
 });
+
+/* The row tap on the portrait board is a separate path from ui.selectCard and
+   it has its own row lookup. It used to resolve every row to null, so a spy the
+   rules accepted stayed unreachable. */
+test("tapping the enemy spy on its row completes the Decoy", async () => {
+	const { page, me, op } = setup();
+	const decoy = new page.Card(cardByName(page, "Decoy"), me);
+	const spy = new page.Card(spyCard(page), op);
+	spy.holder = me;
+	const row = page.board.row[3];
+	await row.addCard(spy);
+	me.hand.addCard(decoy);
+
+	page.ui.selectCard(decoy);
+	assert.equal(spy.elem.classList.contains("noclick"), false, "spy is tappable");
+	spy.elem.click();
+	await new Promise((resolve) => setTimeout(resolve, 0));
+
+	assert.ok(me.hand.cards.includes(spy), "tapping the spy returns it to hand");
+	assert.ok(row.cards.includes(decoy), "the Decoy takes its slot");
+	assert.equal(page.ui.previewCard, null, "no stray preview is left open");
+	assert.equal(me.ended, 1, "the Decoy ends the turn");
+});

@@ -1152,6 +1152,12 @@ html.gwent-portrait #exit-game {
 	top: 8px;
 }
 
+/* main.noclick locks input for the whole board while the AI thinks; the exit
+   button must keep working even if a turn never comes back. */
+html.gwent-portrait main.noclick #exit-game {
+	pointer-events: auto;
+}
+
 /* ----- wood halves from the existing board.jpg crop ----- */
 
 html.gwent-portrait #panel-mid {

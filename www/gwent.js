@@ -220,7 +220,7 @@ class ControllerAI {
 	
 	// Selects a card to return to the Hand and replaces it with a Decoy. Assumes at least one valid card.
 	async decoy(card, max, data) {
-		let targ, row, index = -1;
+		let targ;
 		if (data.spy.length){
 			let min = data.spy.reduce( (a,c) => Math.min(a, c.power), Number.MAX_VALUE);
 			targ = data.spy.filter(c => c.power === min)[0];
@@ -233,22 +233,17 @@ class ControllerAI {
 				r.cards.filter(c => c.isUnit()).map(c => ({r:r.row, c:c})).concat(a)
 			, []);
 			if (pairs.length === 0)
-				return;
-			let pair = pairs[randomInt(pairs.length)];
-			targ = pair.c;
-			row = pair.r;
+				return this.player.endTurn();
+			targ = pairs[randomInt(pairs.length)].c;
 		}
 
-		for (let i = 0; !row && i < board.row.length; ++i){
-			if (board.row[i].cards.indexOf(targ) !== -1){
-				row = board.row[i];
-				index = i;
-				break;
-			}
-		}
+		// Find the row from the card itself: the branches above may know only the
+		// card, and a guessed index rejected every ordinary unit.
+		const index = board.row.findIndex(r => r.cards.indexOf(targ) !== -1);
+		const row = index === -1 ? null : board.row[index];
 		// Same rule as the player: only a non-hero unit on this side may return.
 		if (!row || !GwentRules.isDecoyTarget(targ, card.holder, index, 0))
-			return;
+			return this.player.endTurn();
 		await this.player.playCardAction(card, async () => await ui.resolveDecoy(card, targ, row));
 	}
 	

@@ -4,11 +4,13 @@
 	root.classList.add("gwent-portrait");
 
 	var main = document.querySelector("main");
-	var board = document.getElementById("panel-mid");
+	/* Not "board": that name belongs to the game model from gwent.js, and
+	   shadowing it here made every row lookup below return null. */
+	var panelMid = document.getElementById("panel-mid");
 	var weather = document.getElementById("weather");
 	var fieldMe = document.getElementById("field-me");
-	if (weather && board && fieldMe) {
-		board.insertBefore(weather, fieldMe);
+	if (weather && panelMid && fieldMe) {
+		panelMid.insertBefore(weather, fieldMe);
 	}
 
 	var dock = document.getElementById("portrait-dock");
@@ -163,6 +165,10 @@
 					return;
 				}
 				if (obj) ui.lastRow = obj;
+				/* The card has its own click listener that would play it a second
+				   time; the row already did the work. */
+				e.preventDefault();
+				e.stopPropagation();
 				ui.selectCard(model);
 				return;
 			}

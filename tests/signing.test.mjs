@@ -12,5 +12,7 @@ test("every build is signed with the committed key so updates install in place",
 	const gradle = readFileSync(join(projectRoot, "android", "app", "build.gradle"), "utf8");
 	assert.ok(gradle.includes('storeFile file("../keystore/gwent-debug.keystore")'));
 	assert.ok(gradle.includes("signingConfig signingConfigs.debug"));
-	assert.ok(gradle.includes('versionCode 8'));
+	// The signing test only needs a versionCode present; pinning a number broke
+	// every release bump.
+	assert.match(gradle, /versionCode [1-9]\d*/);
 });

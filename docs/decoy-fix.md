@@ -74,3 +74,25 @@ await board.moveTo(decoy, row, holder.hand);
 потом проигрывает анимацию — обмен во время анимации больше не «переворачивает»
 карту обратно. Тест: `tests/decoy.test.mjs` («stale opponent holder») и
 `tests/decoy-flow.test.mjs`.
+
+## Версия 1.4.2: тап по карте и зависший ИИ
+
+Правило было верным, а два места вокруг него — нет.
+
+1. `www/portrait.js` держал в замыкании `var board = document.getElementById("panel-mid")`,
+   что затеняло модель `board` из `gwent.js`. `rowObject()` проверял `board.row` у
+   DOM-элемента, всегда получал `null`, и обработчик тапа отвергал любую цель:
+   подсветка ряда горела, а шпион не забирался. Панель переименована в `panelMid`.
+   Легальный тап теперь ещё и останавливает событие, чтобы клик по карте не
+   открыл её превью вторым проходом.
+2. `ControllerAI.decoy` в ветке «обычный отряд» брал готовый ряд из анализа, но
+   индекс оставался `-1`, и `GwentRules.isDecoyTarget` отвергал цель. Ход ИИ при
+   этом не заканчивался — соперник замирал с картами в руке. Теперь ряд и индекс
+   ищутся по самой карте, а если цели нет, ход всё равно завершается.
+
+Тесты: `tests/decoy.test.mjs` («tapping the enemy spy on its row»),
+`tests/decoy-flow.test.mjs` («AI decoys its own ordinary unit», «turn must end»).
+
+Кнопка выхода больше не зависит от блокировки стола: `main.noclick` снимает
+события со всей панели, поэтому `portrait.css` возвращает `pointer-events: auto`
+самому `#exit-game` (тест в `tests/pass.test.mjs`).
