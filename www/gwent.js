@@ -35,6 +35,10 @@ class ControllerAI {
 		if (player.leaderAvailable)
 			weights.push( {weight: this.weightLeader(player.leader, data_max, data_board), action: async () => await player.activateLeader()} );
 		weights.push( {weight: this.weightPass(), action: async () => await player.passRound()} );
+		// A leader can report a negative weight (Eredin King without weather in
+		// the deck, Francesca Hope without agile units). The weighted pick then
+		// walked past the end of the list and the AI threw, freezing the round.
+		weights.forEach(w => { w.weight = isNumber(w.weight) ? Math.max(0, w.weight) : 0; });
 		let weightTotal = weights.reduce( (a,c) => a + c.weight, 0);
 		if (weightTotal === 0){
 			for (let i=0; i<player.hand.cards.length; ++i) {
@@ -545,7 +549,15 @@ class Player {
 		}
 		
 		if (this.controller instanceof ControllerAI) {
-			await this.controller.startTurn(this);
+			try {
+				await this.controller.startTurn(this);
+			} catch (err) {
+				// A failed AI action used to leave the board locked with no pass
+				// and no turn: the match froze. Log it and pass instead.
+				console.error("AI turn failed: " + (err && err.stack || err));
+				if (!this.passed)
+					await this.passRound();
+			}
 		}
 	}
 	

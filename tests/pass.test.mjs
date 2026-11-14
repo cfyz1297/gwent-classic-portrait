@@ -8,6 +8,56 @@ function leader(page, deck) {
 	return page.card_dict.find((card) => card.row === "leader" && card.deck === deck);
 }
 
+/* An AI with an empty hand still weighs its leader. Eredin King reports -1 when
+   no weather card is left in the deck, Francesca Hope -1 without agile units.
+   The weighted pick then ran past the end of the list, the AI threw, and the
+   board stayed locked on its turn with no pass badge. */
+for (const name of ["Eredin - King of the Wild Hunt", "Francesca Findabair - Hope of the Aen Seidhe"]) {
+	test(`an AI with no cards and a wasted ${name} passes instead of throwing`, async () => {
+		const { page } = boot();
+		const leaderData = page.card_dict.find((card) => card.name === name);
+		assert.ok(leaderData, name + " must exist");
+		const me = new page.Player(0, "Геральт", { faction: "realms", leader: leader(page, "realms"), cards: [] });
+		const op = new page.Player(1, "Соперник", { faction: leaderData.deck, leader: leaderData, cards: [] });
+		page.me = me;
+		page.op = op;
+		me.setPassed(true);            // the human already passed
+		op.health = 1;                 // weightPass() is 0 on the last life
+		op.leaderAvailable = true;
+		page.game.currPlayer = op;
+		page.game.roundCount = 2;
+		let ended = 0;
+		op.endTurn = () => { ended++; };
+
+		await op.controller.startTurn(op);
+
+		assert.equal(op.passed, true, "the AI must pass");
+		assert.equal(ended, 1, "the turn must end exactly once");
+	});
+}
+
+/* Any exception in the AI turn used to leave the board locked forever: nobody
+   passed, the human could not act, and the match was dead. */
+test("an AI error ends its turn instead of freezing the match", async () => {
+	const { page } = boot();
+	const me = new page.Player(0, "Геральт", { faction: "realms", leader: leader(page, "realms"), cards: [] });
+	const op = new page.Player(1, "Соперник", { faction: "nilfgaard", leader: leader(page, "nilfgaard"), cards: [] });
+	page.me = me;
+	page.op = op;
+	op.controller.startTurn = async () => { throw new Error("boom"); };
+	let ended = 0;
+	op.endTurn = () => { ended++; };
+	const origError = console.error;
+	console.error = () => {};
+	try {
+		await op.startTurn();
+	} finally {
+		console.error = origError;
+	}
+	assert.equal(op.passed, true, "the AI passes after a failure");
+	assert.equal(ended, 1, "the turn is handed back");
+});
+
 test("a passed player is marked in the HUD and on their half of the board", () => {
 	const { window, page } = boot();
 	const me = new page.Player(0, "Геральт", { faction: "realms", leader: leader(page, "realms"), cards: [] });

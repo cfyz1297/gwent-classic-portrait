@@ -1,6 +1,6 @@
 {
   "name": "gwent-classic-portrait",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "private": true,
   "engines": {
     "node": ">=22.22.2"
