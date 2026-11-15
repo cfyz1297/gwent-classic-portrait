@@ -1,0 +1,412 @@
+
+=== DIRECTORY TREE (max depth 3, source files only) ===
+.gitattributes
+.github
+.github/workflows
+.github/workflows/android.yml
+.gitignore
+AGENTS.md
+README.md
+SECURITY.md
+android
+android/.gitignore
+android/app
+android/app/.gitignore
+android/app/build.gradle
+android/app/capacitor.build.gradle
+android/app/proguard-rules.pro
+android/app/src
+android/app/src/androidTest
+android/app/src/main
+android/app/src/test
+android/build.gradle
+android/capacitor.settings.gradle
+android/gradle
+android/gradle/wrapper
+android/gradle/wrapper/gradle-wrapper.jar
+android/gradle/wrapper/gradle-wrapper.properties
+android/gradle.properties
+android/gradlew
+android/gradlew.bat
+android/keystore
+android/keystore/gwent-debug.keystore
+android/settings.gradle
+android/variables.gradle
+assets-ru
+assets-ru/lg
+assets-ru/lg/monsters_arachas.jpg
+assets-ru/lg/monsters_arachas_1.jpg
+assets-ru/lg/monsters_arachas_2.jpg
+assets-ru/lg/monsters_arachas_behemoth.jpg
+assets-ru/lg/monsters_bruxa.jpg
+assets-ru/lg/monsters_celaeno_harpy.jpg
+assets-ru/lg/monsters_cockatrice.jpg
+assets-ru/lg/monsters_draug.jpg
+assets-ru/lg/monsters_earth_elemental.jpg
+assets-ru/lg/monsters_ekkima.jpg
+assets-ru/lg/monsters_endrega.jpg
+assets-ru/lg/monsters_eredin_bronze.jpg
+assets-ru/lg/monsters_eredin_copper.jpg
+assets-ru/lg/monsters_eredin_gold.jpg
+assets-ru/lg/monsters_eredin_silver.jpg
+assets-ru/lg/monsters_eredin_the_treacherous.jpg
+assets-ru/lg/monsters_fiend.jpg
+assets-ru/lg/monsters_fire_elemental.jpg
+assets-ru/lg/monsters_fleder.jpg
+assets-ru/lg/monsters_fogling.jpg
+assets-ru/lg/monsters_forktail.jpg
+assets-ru/lg/monsters_frightener.jpg
+assets-ru/lg/monsters_frost_giant.jpg
+assets-ru/lg/monsters_gargoyle.jpg
+assets-ru/lg/monsters_garkain.jpg
+assets-ru/lg/monsters_ghoul.jpg
+assets-ru/lg/monsters_ghoul_1.jpg
+assets-ru/lg/monsters_ghoul_2.jpg
+assets-ru/lg/monsters_gravehag.jpg
+assets-ru/lg/monsters_gryffin.jpg
+assets-ru/lg/monsters_harpy.jpg
+assets-ru/lg/monsters_imlerith.jpg
+assets-ru/lg/monsters_katakan.jpg
+assets-ru/lg/monsters_kayran.jpg
+assets-ru/lg/monsters_leshen.jpg
+assets-ru/lg/monsters_mighty_maiden.jpg
+assets-ru/lg/monsters_nekker.jpg
+assets-ru/lg/monsters_nekker_1.jpg
+assets-ru/lg/monsters_nekker_2.jpg
+assets-ru/lg/monsters_poroniec.jpg
+assets-ru/lg/monsters_toad.jpg
+assets-ru/lg/monsters_werewolf.jpg
+assets-ru/lg/monsters_witch_velen.jpg
+assets-ru/lg/monsters_witch_velen_1.jpg
+assets-ru/lg/monsters_witch_velen_2.jpg
+assets-ru/lg/monsters_wyvern.jpg
+assets-ru/lg/neutral_chort.jpg
+assets-ru/lg/neutral_ciri.jpg
+assets-ru/lg/neutral_cow.jpg
+assets-ru/lg/neutral_dandelion.jpg
+assets-ru/lg/neutral_emiel.jpg
+assets-ru/lg/neutral_gaunter_odimm.jpg
+assets-ru/lg/neutral_gaunter_odimm_darkness.jpg
+assets-ru/lg/neutral_geralt.jpg
+assets-ru/lg/neutral_mysterious_elf.jpg
+assets-ru/lg/neutral_olgierd.jpg
+assets-ru/lg/neutral_triss.jpg
+assets-ru/lg/neutral_vesemir.jpg
+assets-ru/lg/neutral_villen.jpg
+assets-ru/lg/neutral_yennefer.jpg
+assets-ru/lg/neutral_zoltan.jpg
+assets-ru/lg/nilfgaard_albrich.jpg
+assets-ru/lg/nilfgaard_archer_support.jpg
+assets-ru/lg/nilfgaard_archer_support_1.jpg
+assets-ru/lg/nilfgaard_assire.jpg
+assets-ru/lg/nilfgaard_black_archer.jpg
+assets-ru/lg/nilfgaard_black_archer_1.jpg
+assets-ru/lg/nilfgaard_cahir.jpg
+assets-ru/lg/nilfgaard_cynthia.jpg
+assets-ru/lg/nilfgaard_emhyr_bronze.jpg
+assets-ru/lg/nilfgaard_emhyr_copper.jpg
+assets-ru/lg/nilfgaard_emhyr_gold.jpg
+assets-ru/lg/nilfgaard_emhyr_invader_of_the_north.jpg
+assets-ru/lg/nilfgaard_emhyr_silver.jpg
+assets-ru/lg/nilfgaard_fringilla.jpg
+assets-ru/lg/nilfgaard_heavy_zerri.jpg
+assets-ru/lg/nilfgaard_imperal_brigade.jpg
+assets-ru/lg/nilfgaard_letho.jpg
+assets-ru/lg/nilfgaard_menno.jpg
+assets-ru/lg/nilfgaard_moorvran.jpg
+assets-ru/lg/nilfgaard_morteisen.jpg
+assets-ru/lg/nilfgaard_nauzicaa_2.jpg
+assets-ru/lg/nilfgaard_puttkammer.jpg
+assets-ru/lg/nilfgaard_rainfarn.jpg
+assets-ru/lg/nilfgaard_renuald.jpg
+assets-ru/lg/nilfgaard_rotten.jpg
+assets-ru/lg/nilfgaard_shilard.jpg
+assets-ru/lg/nilfgaard_siege_engineer.jpg
+assets-ru/lg/nilfgaard_siege_support.jpg
+assets-ru/lg/nilfgaard_stefan.jpg
+assets-ru/lg/nilfgaard_sweers.jpg
+assets-ru/lg/nilfgaard_tibor.jpg
+assets-ru/lg/nilfgaard_vanhemar.jpg
+assets-ru/lg/nilfgaard_vattier.jpg
+assets-ru/lg/nilfgaard_vreemde.jpg
+assets-ru/lg/nilfgaard_young_emissary.jpg
+assets-ru/lg/nilfgaard_young_emissary_1.jpg
+assets-ru/lg/nilfgaard_zerri.jpg
+assets-ru/lg/realms_ballista.jpg
+assets-ru/lg/realms_banner_nurse.jpg
+assets-ru/lg/realms_blue_stripes.jpg
+assets-ru/lg/realms_catapult_1.jpg
+assets-ru/lg/realms_crinfrid.jpg
+assets-ru/lg/realms_dethmold.jpg
+assets-ru/lg/realms_dijkstra.jpg
+assets-ru/lg/realms_esterad.jpg
+assets-ru/lg/realms_foltest_bronze.jpg
+assets-ru/lg/realms_foltest_copper.jpg
+assets-ru/lg/realms_foltest_gold.jpg
+assets-ru/lg/realms_foltest_silver.jpg
+assets-ru/lg/realms_foltest_son_of_medell.jpg
+assets-ru/lg/realms_kaedwen_siege.jpg
+assets-ru/lg/realms_kaedwen_siege_1.jpg
+assets-ru/lg/realms_kaedwen_siege_2.jpg
+assets-ru/lg/realms_keira.jpg
+assets-ru/lg/realms_natalis.jpg
+assets-ru/lg/realms_philippa.jpg
+assets-ru/lg/realms_poor_infantry.jpg
+assets-ru/lg/realms_redania.jpg
+assets-ru/lg/realms_redania_1.jpg
+assets-ru/lg/realms_sabrina.jpg
+assets-ru/lg/realms_sheala.jpg
+assets-ru/lg/realms_sheldon.jpg
+assets-ru/lg/realms_siege_tower.jpg
+assets-ru/lg/realms_siegfried.jpg
+assets-ru/lg/realms_stennis.jpg
+assets-ru/lg/realms_thaler.jpg
+assets-ru/lg/realms_trebuchet.jpg
+assets-ru/lg/realms_trebuchet_1.jpg
+assets-ru/lg/realms_vernon.jpg
+assets-ru/lg/realms_ves.jpg
+assets-ru/lg/realms_yarpen.jpg
+assets-ru/lg/scoiatael_barclay.jpg
+assets-ru/lg/scoiatael_ciaran.jpg
+assets-ru/lg/scoiatael_dennis.jpg
+assets-ru/lg/scoiatael_dol_archer.jpg
+assets-ru/lg/scoiatael_dol_infantry.jpg
+assets-ru/lg/scoiatael_dol_infantry_1.jpg
+assets-ru/lg/scoiatael_dol_infantry_2.jpg
+assets-ru/lg/scoiatael_dwarf.jpg
+assets-ru/lg/scoiatael_dwarf_1.jpg
+assets-ru/lg/scoiatael_dwarf_2.jpg
+assets-ru/lg/scoiatael_eithne.jpg
+assets-ru/lg/scoiatael_elf_skirmisher.jpg
+assets-ru/lg/scoiatael_elf_skirmisher_1.jpg
+assets-ru/lg/scoiatael_elf_skirmisher_2.jpg
+assets-ru/lg/scoiatael_filavandrel.jpg
+assets-ru/lg/scoiatael_francesca_bronze.jpg
+assets-ru/lg/scoiatael_francesca_copper.jpg
+assets-ru/lg/scoiatael_francesca_gold.jpg
+assets-ru/lg/scoiatael_francesca_hope_of_the_aen_seidhe.jpg
+assets-ru/lg/scoiatael_francesca_silver.jpg
+assets-ru/lg/scoiatael_havekar_nurse.jpg
+assets-ru/lg/scoiatael_havekar_nurse_1.jpg
+assets-ru/lg/scoiatael_havekar_nurse_2.jpg
+assets-ru/lg/scoiatael_havekar_support.jpg
+assets-ru/lg/scoiatael_havekar_support_1.jpg
+assets-ru/lg/scoiatael_havekar_support_2.jpg
+assets-ru/lg/scoiatael_ida.jpg
+assets-ru/lg/scoiatael_iorveth.jpg
+assets-ru/lg/scoiatael_isengrim.jpg
+assets-ru/lg/scoiatael_mahakam.jpg
+assets-ru/lg/scoiatael_mahakam_1.jpg
+assets-ru/lg/scoiatael_mahakam_2.jpg
+assets-ru/lg/scoiatael_mahakam_3.jpg
+assets-ru/lg/scoiatael_mahakam_4.jpg
+
+=== STACK DETECTION (manifest files) ===
+
+--- package-lock.json ---
+{
+  "name": "gwent-classic-portrait",
+  "version": "1.1.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "gwent-classic-portrait",
+      "version": "1.1.0",
+      "dependencies": {
+        "@capacitor/android": "^7.4.3",
+        "@capacitor/core": "^7.4.3"
+      },
+      "devDependencies": {
+        "@capacitor/cli": "^7.4.3",
+        "jsdom": "^31.0.0",
+        "sharp": "^0.35.5"
+      },
+      "engines": {
+        "node": ">=22.22.2"
+      }
+    },
+    "node_modules/@capacitor/android": {
+      "version": "7.6.9",
+      "resolved": "https://registry.npmjs.org/@capacitor/android/-/android-7.6.9.tgz",
+      "integrity": "sha512-jvfU42aOuj92/KJqRscfDm+5612WzJainFL09xjJgD9oI3OMXN4PBfccn8Ig9i8x7bkVqZv/XNwFshiIRqmggg==",
+      "license": "MIT",
+      "peerDependencies": {
+        "@capacitor/core": "^7.6.0"
+      }
+    },
+    "node_modules/@capacitor/cli": {
+      "version": "7.6.9",
+      "resolved": "https://registry.npmjs.org/@capacitor/cli/-/cli-7.6.9.tgz",
+      "integrity": "sha512-QBDEf38yBAFTJehbi5FvAmhDWV1I/e7Zr3Z6XX0Bj+9T+/OY5EkGbw5/1e+3oIyyeepq3WtdSkLWHs3VNH2gCA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@ionic/cli-framework-output": "^2.2.8",
+        "@ionic/utils-subprocess": "^3.0.1",
+        "@ionic/utils-terminal": "^2.3.5",
+        "commander": "^12.1.0",
+        "debug": "^4.4.0",
+        "env-paths": "^2.2.0",
+        "fs-extra": "^11.2.0",
+        "kleur": "^4.1.5",
+        "native-run": "^2.0.3",
+        "open": "^8.4.0",
+        "plist": "^3.1.0",
+        "prompts": "^2.4.2",
+        "rimraf": "^6.0.1",
+        "semver": "^7.6.3",
+        "tar": "^7.5.3",
+        "tslib": "^2.8.1",
+        "xml2js": "^0.6.2"
+      },
+      "bin": {
+        "cap": "bin/capacitor",
+        "capacitor": "bin/capacitor"
+      },
+      "engines": {
+        "node": ">=20.0.0"
+      }
+    },
+    "node_modules/@capacitor/core": {
+      "version": "7.6.9",
+      "resolved": "https://registry.npmjs.org/@capacitor/core/-/core-7.6.9.tgz",
+      "integrity": "sha512-4DOh/xySC9S5ryhUIqpOppasIyi2WiTdF0JuZ/2DEs+vf5eunRzHDdNYBp1snA3faHciTw/3SVGXfR+WkYxsMA==",
+      "license": "MIT",
+      "dependencies": {
+        "tslib": "^2.1.0"
+      }
+    },
+    "node_modules/@emnapi/runtime": {
+      "version": "1.11.3",
+      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.3.tgz",
+      "integrity": "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==",
+      "dev": true,
+      "license": "MIT",
+      "optional": true,
+
+[TRUNCATED] Showing first 80 of 2168 lines.
+--- package.json ---
+{
+  "name": "gwent-classic-portrait",
+  "version": "1.4.4",
+  "private": true,
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "description": "Portrait phone build of asundr/gwent-classic with Witcher 3 Decoy rules and a faction leader picker. Not an official CD PROJEKT RED product.",
+  "scripts": {
+    "test": "node --test tests/rules.test.mjs tests/decoy.test.mjs tests/decoy-flow.test.mjs tests/leader-picker.test.mjs tests/deck-import.test.mjs tests/security.test.mjs tests/i18n.test.mjs tests/ru-assets.test.mjs tests/scorch.test.mjs tests/weather.test.mjs tests/pass.test.mjs tests/berserker.test.mjs tests/spy-draw.test.mjs tests/ui-preview.test.mjs tests/new-game.test.mjs tests/signing.test.mjs",
+    "test:rules": "node --test tests/rules.test.mjs",
+    "sync": "cap sync android",
+    "assemble": "cd android && ./gradlew assembleDebug",
+    "stage:ru": "node scripts/stage-ru-www.mjs",
+    "build:ru": "node scripts/build-ru-variant.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "jsdom": "^31.0.0",
+    "sharp": "^0.35.5"
+  }
+}
+
+=== ENTRY POINTS ===
+No common entry points found. Check 'main' or 'scripts.start' in manifest files above.
+
+=== LINTING AND FORMATTING CONFIG ===
+No linting or formatting config files found in project root.
+
+=== ENVIRONMENT VARIABLE TEMPLATES ===
+No .env.example or .env.template found. Identify required environment variables by searching the code and config for environment variable reads.
+
+=== TODO / FIXME / HACK (production code only, test dirs excluded) ===
+www/factions.js:53: //sleepUntil(game.firstPlayer); //TODO online
+www/gwent.js:194: async mardroeme(card){ // TODO skellige
+www/gwent.js:668: // TODO set crown color
+www/gwent.js:1286: // TODO Sunlight animation
+www/gwent.js:1476: this.placedEffectsActive = false; //TODO replace with propper game state
+
+=== GIT RECENT COMMITS (last 20) ===
+759d913 fix: an empty-handed AI froze the match instead of passing
+afa133c fix: new game inherited a Cow spawn and a negative score
+b095ef0 fix: Decoy row tap, AI Decoy turn hang, exit during AI turn
+3eec2eb docs: add codebase map
+6d2bb66 ci: verify the APK is signed with the committed key
+a2d5468 fix: Decoy tap on freshly placed spies, art-only preview, stable signing
+dde060c fix: Russian verdict on the end screen banner
+d048272 feat: Russian notifications, spy draw preview, end screen fix, ponytail audit
+59e39c4 fix: card power badge and icons follow the printed card layout
+d14463e fix: clean weather bar overlays, add rule audit screenshots (1.3.1)
+c786b18 fix: Witcher 3 rule corrections and readable card overlays
+1c68da2 docs: screenshots of the Russian deck editor and leader picker
+4e41a74 fix(ci): make gradlew executable for the Russian APK job
+290c2c7 feat: Russian APK variant with localized card faces
+91a3cf4 docs: cite the duskworld rules and card-list sources
+f1654b8 fix(ci): build with JDK 21, refresh the leader name after deck import
+a14bfd3 fix(ci): use the preinstalled Android SDK instead of setup-android
+1e7a7b8 fix(ci): run tests on Node 24 with an explicit file list
+1dcb488 feat: portrait Gwent build with W3 Decoy rules, leader picker, tests and CI
+
+=== HIGH-CHURN FILES (last 90 days, top 20) ===
+  12 README.md
+  11 package.json
+  10 android/app/build.gradle
+   9 www/gwent.js
+   8 www/portrait.css
+   6 .github/workflows/android.yml
+   4 tests/decoy.test.mjs
+   3 tests/pass.test.mjs
+   3 docs/decoy-fix.md
+   3 www/portrait.js
+   3 .gitignore
+   3 tests/i18n.test.mjs
+   3 www/abilities.js
+   3 www/style.css
+   3 docs/witcher3-rules.md
+   3 build-apk.sh
+   3 package-lock.json
+   2 tests/decoy-flow.test.mjs
+   2 tests/signing.test.mjs
+   2 AGENTS.md
+
+=== MONOREPO SIGNALS ===
+No monorepo signals detected.
+
+=== CODE METRICS ===
+Total files scanned: 896
+Total lines of code: 12683
+
+Files by language:
+  Other: 882
+  JavaScript: 11
+  Java: 3
+
+Top 10 largest files:
+docs/screenshots/spy-draw.png: 514.7KB
+docs/screenshots/notification-ru.png: 469.3KB
+docs/screenshots/pass-indicator.png: 442.8KB
+docs/screenshots/russian-deck.png: 344.4KB
+www/img/icons/overlay_frost.png: 296.9KB
+www/img/icons/end_win.png: 289.5KB
+docs/screenshots/hand-overlays.png: 289.3KB
+www/img/icons/end_draw.png: 287.6KB
+www/img/icons/end_lose.png: 275.3KB
+www/img/icons/overlay_rain.png: 235.4KB
+
+=== CI/CD PIPELINES ===
+CI/CD: GitHub Actions
+
+=== CONTAINERS & ORCHESTRATION ===
+No containerization configs detected.
+
+=== SECURITY & COMPLIANCE ===
+Security: SECURITY.md
+
+=== PERFORMANCE & TESTING ===
+No performance testing configs detected.
+
+=== SCAN COMPLETE ===

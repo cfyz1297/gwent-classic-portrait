@@ -8,12 +8,13 @@
 |---------|---------|--------|----------------|
 | Файлы веб-слоя | Одно слово или `camelCase`; данные — существительное | `gwent.js`, `leader-picker.js`, `portrait-ui.js`, `cards.js` | `www/` |
 | Файлы скриптов/тестов | `kebab-case` | `build-ru-variant.mjs`, `deck-import.test.mjs` | `scripts/`, `tests/` |
-| Классы | `PascalCase` | `Game`, `DeckMaker`, `ControllerAI` | `www/gwent.js:19,1425,2637` |
-| Функции/методы | `camelCase` | `startGame`, `isDecoyTarget`, `resolveDecoy` | `www/gwent.js:1504,2191`; `www/rules.js:59` |
-| Глобальные данные upstream | `snake_case` | `card_dict`, `ability_dict`, `premade_deck`, `player_me` | `www/cards.js:1`, `www/abilities.js:3`, `www/decks.js:1`, `www/gwent.js:3615` |
+| Классы | `PascalCase` | `Game`, `DeckMaker`, `ControllerAI` | `www/gwent.js:19,1446,2666` |
+| Функции/методы | `camelCase` | `startGame`, `isDecoyTarget`, `resolveDecoy` | `www/gwent.js:1531,2220`; `www/rules.js:59` |
+| Глобальные данные upstream | `snake_case` | `card_dict`, `ability_dict`, `premade_deck`, `player_me` | `www/cards.js:1`, `www/abilities.js:3`, `www/decks.js:1`, `www/gwent.js:3644` |
+| Внутренние флаги-стражи | Префикс `_` | `_emptying` (стол очищается) | `www/gwent.js:1092,1221,1246` |
 | Идентификаторы способностей | Короткие строки, иногда с суффиксом ряда | `decoy`, `spy`, `scorch_c/r/s`, `emhyr_whiteflame` | `www/abilities.js:33,91,125-138,353` |
-| CSS-классы | `kebab-case`, состояние — отдельный класс | `row-selectable`, `noclick`, `side-passed`, `is-on` | `www/gwent.js:533-539`, `www/portrait.css` |
-| Пользовательские строки | Русский текст; идентификаторы — английские | `"Чучелом можно заменить только..."` | `AGENTS.md`, `www/portrait.js:157-160` |
+| CSS-классы | `kebab-case`, состояние — отдельный класс | `row-selectable`, `noclick`, `side-passed`, `is-on` | `www/gwent.js:537,804-811`, `www/portrait.css` |
+| Пользовательские строки | Русский текст; идентификаторы — английские | `"Чучелом можно заменить только..."` | `AGENTS.md`, `www/portrait.js:159-167` |
 
 ### 2) Форматирование и линтинг
 
@@ -21,6 +22,7 @@
 - Линтер **не настроен**. Единственная автоматическая проверка синтаксиса — `node --check www/*.js` в CI (`.github/workflows/android.yml:32-35`).
 - Фактический стиль неоднороден: upstream-файлы (`gwent.js`, `style.css`) используют табы и местами опускают точки с запятой; новые мобильные файлы (`portrait.js`, `portrait-ui.js`, `leader-picker.js`) — табы, `var`, IIFE, точки с запятой. Правило: **сохранять стиль правимого файла**, не переформатировать чужие файлы целиком.
 - `.gitattributes` фиксирует LF для текста и `binary` для картинок/звука/keystore (`.gitattributes`).
+- Комментарии в новом коде — по-английски и объясняют **почему**, а не что: например, блок про отрицательные веса лидера (`www/gwent.js:38-40`) и про затенённый `board` (`www/portrait.js:6-8`).
 - Запуск проверок: `npm test`, `node --check www/gwent.js`.
 
 ### 3) Импорты и модули
@@ -33,7 +35,9 @@
 
 ### 4) Ошибки, подсказки и логирование
 
-- Импорт колоды: `GwentRules.parseDeckJSON` **никогда не бросает исключение**, возвращает `{ok, deck, reasons}`; ошибки показываются списком в UI (`www/rules.js:145-224`, `tests/deck-import.test.mjs`).
+- Импорт колоды: `GwentRules.parseDeckJSON` **никогда не бросает исключение**, возвращает `{ok, deck, reasons}`; ошибки показываются списком в UI (`www/rules.js:148-224`, `tests/deck-import.test.mjs`).
+- Ход ИИ: ошибка не всплывает наружу — `Player.startTurn` ловит её, пишет `console.error("AI turn failed: ...")` и пасует, чтобы партия не зависла (`www/gwent.js:551-559`). Это осознанная деградация, а не проглоченная ошибка: тест `an AI error ends its turn instead of freezing the match`.
+- Массовая очистка стола: побочные `removed`-эффекты глушатся флагом `_emptying` в `try/finally`, чтобы флаг снимался даже при исключении (`www/gwent.js:1217-1226,1245-1259`).
 - Пользовательские тупики объясняются одной строкой через `window.gwentHint` (роль `status`, `aria-live="polite"`), например нелегальный тап Чучелом (`www/portrait-ui.js:11-29`, `www/portrait.js:155-162`).
 - Сохранение настроек — best-effort: в `leader-picker.js` вызов `Settings...setLeader` обёрнут в `try/catch`, чтобы сбой `localStorage` не ломал текущую партию (`www/leader-picker.js:112-116`).
 - Логирования и телеметрии нет: только `console` браузера и логи GitHub Actions. Секреты не логируются, потому что их нет в runtime.
@@ -43,7 +47,8 @@
 
 - Любая правка поведения = тест в `tests/` и зелёный `npm test` (`AGENTS.md`).
 - Файл теста называется по фиче: `decoy.test.mjs`, `scorch.test.mjs`, `weather.test.mjs`.
-- Список тестов **явный** в `package.json` (`scripts.test`), не глоб; новый файл нужно туда добавить. Причина — переносимость между Node 20/24 и Windows/Linux (`docs/ponytail-audit.md`).
+- Список тестов **явный** в `package.json` (`scripts.test`), не глоб; новый файл нужно туда добавить. Сейчас 16 файлов и 68 тестов. Причина — переносимость между версиями Node и Windows/Linux (`docs/ponytail-audit.md`).
+- Один `test()` в цикле допустим, когда проверяется один инвариант на нескольких данных: два «бесполезных» лидера в `tests/pass.test.mjs:14-15`.
 - Тесты загружают реальную страницу через `tests/helpers/boot.mjs`, а не импортируют функции по отдельности.
 - Эталон ожидаемого поведения — `docs/witcher3-rules.md`; для каждого правила в `docs/rules-audit.md` указан держащий его тест.
 
@@ -56,7 +61,9 @@
 - `www/index.html:299-309`
 - `tests/helpers/boot.mjs:12-24`
 - `package.json` (`scripts.test`)
-- `www/rules.js:145-224`
+- `www/rules.js:148-224`
+- `www/gwent.js:38-41,551-559,1087-1096,1217-1226,1245-1259`
+- `www/portrait.js:6-13,155-172`
 - `www/portrait-ui.js:11-29`
 - `AGENTS.md`
 - `git log -12 --pretty=format:%s`
